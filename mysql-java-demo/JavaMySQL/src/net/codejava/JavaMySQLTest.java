@@ -3,8 +3,7 @@ package net.codejava;
 public class JavaMySQLTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		String url = "jdbc:mysql://localhost:3306/db_name";
 	}
 
 }
