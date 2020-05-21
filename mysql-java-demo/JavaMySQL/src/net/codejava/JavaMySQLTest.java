@@ -19,8 +19,8 @@ public class JavaMySQLTest {
 			// Add new row of data to DB
 			String sql = "INSERT INTO customer (firstname, lastname) VALUES (?, ?)";
 			PreparedStatement statement = connection.prepareStatement(sql);
-			statement.setString(1,  "Thomas"); // this will be placed in 1st ?
-			statement.setString(2,  "Martinez"); // this will be place in 2nd ?
+			statement.setString(1,  "Christopher"); // this will be placed in 1st ?
+			statement.setString(2,  "Wallace"); // this will be place in 2nd ?
 			
 			int rows = statement.executeUpdate();
 			if (rows > 0) {
