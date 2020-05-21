@@ -1,0 +1,64 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+6 rows in set (0.02 sec)
+
+mysql> CREATE DATABASE db_name;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db_name            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> connect db_name;
+Connection id:    18
+Current database: db_name
+
+mysql> show tables;
+Empty set (0.01 sec)
+
+mysql> create table customer (
+    -> id int(11) not null auto_increment,
+    -> firstname varchar(24),
+    -> lastname varchar(24),
+    -> primary key (id)
+    -> );
+Query OK, 0 rows affected, 1 warning (0.06 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_db_name |
++-------------------+
+| customer          |
++-------------------+
+1 row in set (0.01 sec)
+
+mysql> desc customer;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| id        | int         | NO   | PRI | NULL    | auto_increment |
+| firstname | varchar(24) | YES  |     | NULL    |                |
+| lastname  | varchar(24) | YES  |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+3 rows in set (0.02 sec)
+
+mysql>

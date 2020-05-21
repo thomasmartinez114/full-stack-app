@@ -14,7 +14,7 @@
 **Software Programs Installed**
 - [ ] Java Development (JDK)
 - [ ] MySQL Database Community Server
-- [ ] MySQL Workbench
+    - [ ] MySQL Workbench
 - [ ] Eclipse IDE
 
 **MySQL Resources**
