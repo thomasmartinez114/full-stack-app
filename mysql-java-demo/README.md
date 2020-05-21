@@ -17,7 +17,7 @@
     - [ ] MySQL Workbench
 - [ ] Eclipse IDE
 - [ ] MySQL Connector/J (JDBC)
-	- Install the "Platform Independent" zip"
+	- Install the "Platform Independent" zip
 
 **MySQL Resources**
 - Homepage:
