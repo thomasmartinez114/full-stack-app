@@ -9,6 +9,7 @@ class App extends Component {
         My Hello World  
         <FirstComponent />
         <SecondComponent />
+        <ThirdComponent />
       </div>
     );
   }
@@ -30,6 +31,16 @@ class SecondComponent extends Component {
     return (
       <div className="secondComponent">
         SecondComponent
+      </div>
+    )
+  }
+}
+
+class ThirdComponent extends Component {
+  render() {
+    return (
+      <div className="thirdComponent">
+        ThirdComponent
       </div>
     )
   }
