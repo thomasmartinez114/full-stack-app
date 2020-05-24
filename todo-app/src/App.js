@@ -36,14 +36,12 @@ class SecondComponent extends Component {
   }
 }
 
-class ThirdComponent extends Component {
-  render() {
-    return (
-      <div className="thirdComponent">
-        ThirdComponent
-      </div>
-    )
-  }
+function ThirdComponent() {
+  return (
+    <div className="thirdComponent">
+      ThirdComponent
+    </div>
+  )
 }
 
 export default App;
