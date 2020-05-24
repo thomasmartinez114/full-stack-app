@@ -6,7 +6,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        My Hello World
+        My Hello World  
+        <FirstComponent />
+      </div>
+    );
+  }
+}
+
+class FirstComponent extends Component {
+  render() {
+    return (
+      <div className="firstComponent">
+        FirstComponent  
       </div>
     );
   }
