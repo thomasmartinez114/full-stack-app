@@ -16,7 +16,9 @@ class LoginComponent extends Component {
         super(props)
         this.state = {
             username: 'tmartinez',
-            password: ''
+            password: '',
+            hasLoginFailed: false,
+            showSuccessmessage: false,
         }
         // this.handleUsernameChange = this.handleUsernameChange.bind(this);
         // this.handlePasswordChange = this.handlePasswordChange.bind(this);
@@ -26,7 +28,7 @@ class LoginComponent extends Component {
 
 
     handleChange(event) {
-        console.log(this.state);
+        // console.log(this.state);
         this.setState(
             {
                 [event.target.name]
@@ -48,23 +50,44 @@ class LoginComponent extends Component {
 
     loginClicked() {
         //tmartinez, dummy
-        if (this.state.username === 'tmartinez' && this.state.password === 'dummy')
+        if (this.state.username === 'tmartinez' && this.state.password === 'dummy') {
             console.log('Successful');
-        else
+            this.setState({ showSuccessmessage: true });
+            this.setState({ hasLoginFailed: false });
+        }
+        else {
             console.log('Failed');
+            this.setState({ showSuccessmessage: false });
+            this.setState({ hasLoginFailed: true });
+
+        }
     }
 
     render() {
         return (
             <div>
-                <div>Invalid Credentials</div>
-                <div>Login Successful</div>
+                <ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed} />
+                <ShowSuccessMessage showSuccessmessage={this.state.showSuccessmessage} />
                 User Name: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
                 Password: <input type="password" name="password" vale={this.state.password} onChange={this.handleChange} />
                 <button onClick={this.loginClicked}>Login</button>
             </div>
         )
     }
+}
+
+function ShowInvalidCredentials(props) {
+    if (props.hasLoginFailed) {
+        return <div>Invalid Credentials</div>
+    }
+    return null;
+}
+
+function ShowSuccessMessage(props) {
+    if (props.showSuccessmessage) {
+        return <div>Login Successful</div>
+    }
+    return null;
 }
 
 export default NBAApp;
