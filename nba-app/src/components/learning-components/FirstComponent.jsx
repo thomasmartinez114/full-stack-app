@@ -9,13 +9,3 @@ export default class FirstComponent extends Component {
       );
     }
   }
-
-  export class SecondComponent extends Component {
-    render() {
-      return (
-        <div className="secondComponent">
-          SecondComponent
-        </div>
-      )
-    }
-  }
