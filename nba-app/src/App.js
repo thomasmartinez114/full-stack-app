@@ -16,15 +16,7 @@ class App extends Component {
 }
 
 // Class Component
-class FirstComponent extends Component {
-  render() {
-    return (
-      <div className="firstComponent">
-        FirstComponent  
-      </div>
-    );
-  }
-}
+
 
 class SecondComponent extends Component {
   render() {
