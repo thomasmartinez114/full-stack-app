@@ -47,12 +47,18 @@ class LoginComponent extends Component {
     // }
 
     loginClicked() {
-        console.log(this.state);
+        //tmartinez, dummy
+        if (this.state.username === 'tmartinez' && this.state.password === 'dummy')
+            console.log('Successful');
+        else
+            console.log('Failed');
     }
 
     render() {
         return (
             <div>
+                <div>Invalid Credentials</div>
+                <div>Login Successful</div>
                 User Name: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
                 Password: <input type="password" name="password" vale={this.state.password} onChange={this.handleChange} />
                 <button onClick={this.loginClicked}>Login</button>
