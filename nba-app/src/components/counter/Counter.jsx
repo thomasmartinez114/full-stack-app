@@ -1,9 +1,11 @@
 import React from 'react';
+import './Counter.css';
 
 function Counter() {
     return (
         <div className="counter">
-            Counter
+            <button>+1</button>
+            <span>0</span>
         </div>
     )
 }
