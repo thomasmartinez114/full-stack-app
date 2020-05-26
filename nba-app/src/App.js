@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FirstComponent from './components/learning-components/FirstComponent';
 import SecondComponent from './components/learning-components/SecondComponent';
+import ThirdComponent from './components/learning-components/ThirdComponent';
 import logo from './logo.svg';
 import './App.css';
  
@@ -15,14 +16,6 @@ class App extends Component {
       </div>
     );
   }
-}
-
-function ThirdComponent() {
-  return (
-    <div className="thirdComponent">
-      ThirdComponent
-    </div>
-  )
 }
 
 export default App;
