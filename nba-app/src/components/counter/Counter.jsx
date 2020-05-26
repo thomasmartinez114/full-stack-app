@@ -5,15 +5,17 @@ class Counter extends Component {
     render() {
         return (
             <div className="counter">
-                <button onClick={increment}>+1</button>
+                <button onClick={this.increment}>+1</button>
                 <span className="count">0</span>
             </div>
         )
     }
+
+    increment() {
+        console.log('increment');
+    }
 }
 
-function increment() {
-    console.log('increment');
-}
+
 
 export default Counter;
