@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FirstComponent from './components/learning-components/FirstComponent';
 import SecondComponent from './components/learning-components/SecondComponent';
 import ThirdComponent from './components/learning-components/ThirdComponent';
+import Counter from './components/counter/Counter';
 import logo from './logo.svg';
 import './App.css';
  
@@ -9,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <LearningComponents/>
+        <Counter/>
       </div>
     );
   }
