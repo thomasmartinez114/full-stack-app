@@ -47,7 +47,7 @@ class LoginComponent extends Component {
     // }
 
     loginClicked() {
-
+        console.log(this.state);
     }
 
     render() {
