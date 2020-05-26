@@ -9,13 +9,24 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        My Hello World  
-        <FirstComponent />
-        <SecondComponent />
-        <ThirdComponent />
+        <LearningComponents/>
       </div>
     );
   }
 }
+
+class LearningComponents extends Component {
+  render() {
+    return (
+      <div className="LearningComponents">
+        My Hello World
+        <FirstComponent/>
+        <SecondComponent/>
+        <ThirdComponent/>
+      </div>
+    );
+  }
+}
+
 
 export default App;
