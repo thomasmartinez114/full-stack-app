@@ -66,7 +66,9 @@ class LoginComponent extends Component {
     render() {
         return (
             <div>
-                <ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed} />
+                {/* <ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed} /> */}
+                {/* if this hasLoginFailed is true then return the Invalid Credentials */}
+                {this.state.hasLoginFailed && <div>Invalid Credentials</div>}
                 <ShowSuccessMessage showSuccessmessage={this.state.showSuccessmessage} />
                 User Name: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
                 Password: <input type="password" name="password" vale={this.state.password} onChange={this.handleChange} />
