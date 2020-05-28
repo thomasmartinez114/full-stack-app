@@ -18,7 +18,7 @@ class LoginComponent extends Component {
             username: 'tmartinez',
             password: '',
             hasLoginFailed: false,
-            showSuccessmessage: false,
+            showSuccessMessage: false,
         }
         // this.handleUsernameChange = this.handleUsernameChange.bind(this);
         // this.handlePasswordChange = this.handlePasswordChange.bind(this);
@@ -52,12 +52,12 @@ class LoginComponent extends Component {
         //tmartinez, dummy
         if (this.state.username === 'tmartinez' && this.state.password === 'dummy') {
             console.log('Successful');
-            this.setState({ showSuccessmessage: true });
+            this.setState({ showSuccessMessage: true });
             this.setState({ hasLoginFailed: false });
         }
         else {
             console.log('Failed');
-            this.setState({ showSuccessmessage: false });
+            this.setState({ showSuccessMessage: false });
             this.setState({ hasLoginFailed: true });
 
         }
@@ -67,9 +67,10 @@ class LoginComponent extends Component {
         return (
             <div>
                 {/* <ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed} /> */}
+                {/* <ShowSuccessMessage showSuccessMessage={this.state.showSuccessMessage} /> */}
                 {/* if this hasLoginFailed is true then return the Invalid Credentials */}
                 {this.state.hasLoginFailed && <div>Invalid Credentials</div>}
-                <ShowSuccessMessage showSuccessmessage={this.state.showSuccessmessage} />
+                {this.state.ShowSuccessMessage && <div>Login Successful</div>}
                 User Name: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
                 Password: <input type="password" name="password" vale={this.state.password} onChange={this.handleChange} />
                 <button onClick={this.loginClicked}>Login</button>
@@ -86,7 +87,7 @@ function ShowInvalidCredentials(props) {
 }
 
 function ShowSuccessMessage(props) {
-    if (props.showSuccessmessage) {
+    if (props.showSuccessMessage) {
         return <div>Login Successful</div>
     }
     return null;
