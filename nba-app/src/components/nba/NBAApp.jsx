@@ -6,6 +6,7 @@ class NBAApp extends Component {
         return (
             <div className="NBAApp">
                 <Router>
+                    <Route path="/" component={LoginComponent} />
                     <Route path="/login" component={LoginComponent} />
                     <Route path="/welcome" component={WelcomeComponent} />
                 </Router>
