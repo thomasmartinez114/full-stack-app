@@ -5,9 +5,13 @@ class NBAApp extends Component {
     render() {
         return (
             <div className="NBAApp">
-                NBA API
-                <LoginComponent />
-                <WelcomeComponent />
+                <Router>
+                    <Route path="/login" component={LoginComponent} />
+                    <Route path="/welcome" component={WelcomeComponent} />
+                </Router>
+
+                {/* <LoginComponent />
+                <WelcomeComponent /> */}
             </div>
         )
     }
