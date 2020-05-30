@@ -9,7 +9,7 @@ class NBAApp extends Component {
                     <Switch>
                         <Route path="/" exact component={LoginComponent} />
                         <Route path="/login" component={LoginComponent} />
-                        <Route path="/welcome" component={WelcomeComponent} />
+                        <Route path="/welcome/:name" component={WelcomeComponent} />
                         <Route component={ErrorComponent} />
                     </Switch>
                 </Router>
@@ -71,7 +71,7 @@ class LoginComponent extends Component {
     loginClicked() {
         //tmartinez, dummy
         if (this.state.username === 'tmartinez' && this.state.password === 'dummy') {
-            this.props.history.push("/welcome");
+            this.props.history.push(`/welcome/${this.state.username}`);
             // console.log('Successful');
             // this.setState({ showSuccessMessage: true });
             // this.setState({ hasLoginFailed: false });
