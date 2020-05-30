@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class NBAApp extends Component {
     render() {
         return (
             <div className="NBAApp">
                 <Router>
-                    <Route path="/" exact component={LoginComponent} />
-                    <Route path="/login" component={LoginComponent} />
-                    <Route path="/welcome" component={WelcomeComponent} />
+                    <Switch>
+                        <Route path="/" exact component={LoginComponent} />
+                        <Route path="/login" component={LoginComponent} />
+                        <Route path="/welcome" component={WelcomeComponent} />
+                        <Route component={ErrorComponent} />
+                    </Switch>
                 </Router>
 
                 {/* <LoginComponent />
@@ -22,6 +25,10 @@ class WelcomeComponent extends Component {
     render() {
         return <div>Welcome to the NBA API</div>
     }
+}
+
+function ErrorComponent() {
+    return <div>An Error Occurred.  Contact support at (555) 555-5555</div>
 }
 
 class LoginComponent extends Component {
