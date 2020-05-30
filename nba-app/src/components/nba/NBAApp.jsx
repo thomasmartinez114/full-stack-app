@@ -6,8 +6,15 @@ class NBAApp extends Component {
             <div className="NBAApp">
                 NBA API
                 <LoginComponent />
+                <WelcomeComponent />
             </div>
         )
+    }
+}
+
+class WelcomeComponent extends Component {
+    render() {
+        return <div>Welcome to the NBA API</div>
     }
 }
 
