@@ -23,7 +23,7 @@ class NBAApp extends Component {
 
 class WelcomeComponent extends Component {
     render() {
-        return <div>Welcome to the NBA API</div>
+        return <div>Welcome <b>{this.props.match.params.name}</b> to the NBA API</div>
     }
 }
 
