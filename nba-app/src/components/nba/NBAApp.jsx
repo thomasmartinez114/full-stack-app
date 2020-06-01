@@ -47,10 +47,15 @@ class StatsComponent extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>{this.state.stats.id}</td>
-                            <td>{this.state.stats.player}</td>
-                        </tr>
+                        {
+                            this.state.stats.map(
+                                stat =>
+                                    <tr>
+                                        <td>{stat.id}</td>
+                                        <td>{stat.player}</td>
+                                    </tr>
+                            )
+                        }
                     </tbody>
                 </table>
             </div>
