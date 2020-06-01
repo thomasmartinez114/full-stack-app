@@ -10,6 +10,7 @@ class NBAApp extends Component {
                         <Route path="/" exact component={LoginComponent} />
                         <Route path="/login" component={LoginComponent} />
                         <Route path="/welcome/:name" component={WelcomeComponent} />
+                        <Route path="/stats" component={StatsComponent} />
                         <Route component={ErrorComponent} />
                     </Switch>
                 </Router>
@@ -18,6 +19,12 @@ class NBAApp extends Component {
                 <WelcomeComponent /> */}
             </div>
         )
+    }
+}
+
+class StatsComponent extends Component {
+    render() {
+        return <div>NBA Statistics coming soon. . . .</div>
     }
 }
 
