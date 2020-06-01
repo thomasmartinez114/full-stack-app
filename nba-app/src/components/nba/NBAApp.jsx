@@ -26,14 +26,19 @@ class StatsComponent extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            stats: { id: 1, player: 'LeBron James' }
+            stats:
+                [
+                    { id: 1, player: 'LeBron James', ppg: 20.0 },
+                    { id: 2, player: 'Steph Curry', ppg: 25.0 },
+                    { id: 3, player: 'Jayson Tatum', ppg: 18.0 }
+                ]
         }
     }
 
     render() {
         return (
             <div>
-                <h1>More NBA Statistics coming soon. . . .</h1>
+                <p>More NBA Statistics coming soon. . . .</p>
                 <table>
                     <thead>
                         <tr>
