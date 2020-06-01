@@ -44,6 +44,7 @@ class StatsComponent extends Component {
                         <tr>
                             <th>id</th>
                             <th>player</th>
+                            <th>ppg</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,6 +54,7 @@ class StatsComponent extends Component {
                                     <tr>
                                         <td>{stat.id}</td>
                                         <td>{stat.player}</td>
+                                        <td>{stat.ppg}</td>
                                     </tr>
                             )
                         }
