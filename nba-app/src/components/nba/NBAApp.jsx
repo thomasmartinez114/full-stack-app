@@ -72,12 +72,12 @@ class LoginComponent extends Component {
         //tmartinez, dummy
         if (this.state.username === 'tmartinez' && this.state.password === 'dummy') {
             this.props.history.push(`/welcome/${this.state.username}`);
-            // console.log('Successful');
+            console.log('Login Successful');
             // this.setState({ showSuccessMessage: true });
             // this.setState({ hasLoginFailed: false });
         }
         else {
-            console.log('Failed');
+            console.log('Login Failed');
             this.setState({ showSuccessMessage: false });
             this.setState({ hasLoginFailed: true });
 
