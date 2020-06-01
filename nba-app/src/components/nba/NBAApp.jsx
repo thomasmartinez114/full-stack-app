@@ -23,8 +23,33 @@ class NBAApp extends Component {
 }
 
 class StatsComponent extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            stats: { id: 1, player: 'LeBron James' }
+        }
+    }
+
     render() {
-        return <div>NBA Statistics coming soon. . . .</div>
+        return (
+            <div>
+                <h1>More NBA Statistics coming soon. . . .</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>player</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{this.state.stats.id}</td>
+                            <td>{this.state.stats.player}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        )
     }
 }
 
