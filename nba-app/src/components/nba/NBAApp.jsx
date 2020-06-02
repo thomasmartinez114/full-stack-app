@@ -28,9 +28,9 @@ class StatsComponent extends Component {
         this.state = {
             stats:
                 [
-                    { id: 1, player: 'LeBron James', ppg: 20.0 },
-                    { id: 2, player: 'Steph Curry', ppg: 25.0 },
-                    { id: 3, player: 'Jayson Tatum', ppg: 18.0 }
+                    { team: 'LAL', player: 'LeBron James', ppg: 20.0 },
+                    { team: 'GSW', player: 'Steph Curry', ppg: 25.0 },
+                    { team: 'BOS', player: 'Jayson Tatum', ppg: 18.0 }
                 ]
         }
     }
@@ -42,9 +42,9 @@ class StatsComponent extends Component {
                 <table>
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>player</th>
-                            <th>ppg</th>
+                            <th>Team</th>
+                            <th>Player</th>
+                            <th>PPG</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -52,7 +52,7 @@ class StatsComponent extends Component {
                             this.state.stats.map(
                                 stat =>
                                     <tr>
-                                        <td>{stat.id}</td>
+                                        <td>{stat.team}</td>
                                         <td>{stat.player}</td>
                                         <td>{stat.ppg}</td>
                                     </tr>
@@ -67,7 +67,7 @@ class StatsComponent extends Component {
 
 class WelcomeComponent extends Component {
     render() {
-        return <div>Welcome <b>{this.props.match.params.name}</b> to the NBA API</div>
+        return <div>Welcome <b>{this.props.match.params.name}</b> to the NBA API.  You can view NBA stats <Link to="/stats">here</Link></div>
     }
 }
 
