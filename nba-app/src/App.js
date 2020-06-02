@@ -5,6 +5,7 @@ import ThirdComponent from './components/learning-components/ThirdComponent';
 import NBAApp from './components/nba/NBAApp';
 import Counter from './components/counter/Counter';
 import './App.css';
+import './bootstrap.css';
 
 class App extends Component {
   render() {
