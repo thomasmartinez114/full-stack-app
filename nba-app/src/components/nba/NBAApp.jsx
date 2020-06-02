@@ -6,15 +6,17 @@ class NBAApp extends Component {
         return (
             <div className="NBAApp">
                 <Router>
-                    <HeaderComponent />
-                    <Switch>
-                        <Route path="/" exact component={LoginComponent} />
-                        <Route path="/login" component={LoginComponent} />
-                        <Route path="/welcome/:name" component={WelcomeComponent} />
-                        <Route path="/stats" component={StatsComponent} />
-                        <Route component={ErrorComponent} />
-                    </Switch>
-                    <FooterComponent />
+                    <>
+                        <HeaderComponent />
+                        <Switch>
+                            <Route path="/" exact component={LoginComponent} />
+                            <Route path="/login" component={LoginComponent} />
+                            <Route path="/welcome/:name" component={WelcomeComponent} />
+                            <Route path="/stats" component={StatsComponent} />
+                            <Route component={ErrorComponent} />
+                        </Switch>
+                        <FooterComponent />
+                    </>
                 </Router>
 
                 {/* <LoginComponent />
@@ -27,12 +29,23 @@ class NBAApp extends Component {
 class HeaderComponent extends Component {
     render() {
         return (
-            <div>
-                Header <hr />
-            </div>
+            <header>
+                <nav className="navbar navbar-expand-md">
+                    <div><a href="#">nbastats</a></div>
+                    <ul className="navbar-nav">
+                        <li className="nav-link">Home</li>
+                        <li className="nav-link">Stats</li>
+                    </ul>
+                    <ul className="navbar-nav navbar-collapse justify-content-end">
+                        <li className="nav-link">Login</li>
+                        <li className="nav-link">Logout</li>
+                    </ul>
+                </nav>
+            </header>
         )
     }
 }
+
 class FooterComponent extends Component {
     render() {
         return (
@@ -59,7 +72,7 @@ class StatsComponent extends Component {
     render() {
         return (
             <div>
-                <p>More NBA Statistics coming soon. . . .</p>
+                <h4>More NBA Statistics coming soon. . . .</h4>
                 <table>
                     <thead>
                         <tr>
@@ -154,15 +167,18 @@ class LoginComponent extends Component {
     render() {
         return (
             <div>
-                {/* <ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed} /> */}
-                {/* <ShowSuccessMessage showSuccessMessage={this.state.showSuccessMessage} /> */}
+                <h1>Login</h1>
+                <div className="container">
+                    {/* <ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed} /> */}
+                    {/* <ShowSuccessMessage showSuccessMessage={this.state.showSuccessMessage} /> */}
 
-                {/* if this hasLoginFailed is true then return the Invalid Credentials */}
-                {this.state.hasLoginFailed && <div>Invalid Credentials</div>}
-                {this.state.showSuccessMessage && <div>Login Successful</div>}
+                    {/* if this hasLoginFailed is true then return the Invalid Credentials */}
+                    {this.state.hasLoginFailed && <div>Invalid Credentials</div>}
+                    {this.state.showSuccessMessage && <div>Login Successful</div>}
                 User Name: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
                 Password: <input type="password" name="password" vale={this.state.password} onChange={this.handleChange} />
-                <button onClick={this.loginClicked}>Login</button>
+                    <button className="btn btn-success" onClick={this.loginClicked}>Login</button>
+                </div>
             </div>
         )
     }
