@@ -30,7 +30,7 @@ class HeaderComponent extends Component {
     render() {
         return (
             <header>
-                <nav className="navbar navbar-expand-md">
+                <nav className="navbar navbar-expand-md navbar-light bg-light">
                     <div><a href="#">nbastats</a></div>
                     <ul className="navbar-nav">
                         <li className="nav-link">Home</li>
