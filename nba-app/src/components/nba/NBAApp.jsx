@@ -48,9 +48,9 @@ class HeaderComponent extends Component {
 class FooterComponent extends Component {
     render() {
         return (
-            <div>
-                <hr /> Footer
-            </div>
+            <footer className="footer">
+                <span>All Rights Reserved 2020 @thomasmartinez1492</span>
+            </footer>
         )
     }
 }
