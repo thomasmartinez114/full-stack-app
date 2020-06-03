@@ -103,7 +103,7 @@ class StatsComponent extends Component {
                             {
                                 this.state.stats.map(
                                     stat =>
-                                        <tr>
+                                        <tr key={stat.id}>
                                             <td>{stat.team}</td>
                                             <td>{stat.player}</td>
                                             <td>{stat.ppg}</td>
