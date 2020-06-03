@@ -31,12 +31,12 @@ class HeaderComponent extends Component {
                 <nav className="navbar navbar-expand-md navbar-light bg-light">
                     <div><a href="https://stats.nba.com/" target="_blank" className="navbar-brand">nbastats</a></div>
                     <ul className="navbar-nav">
-                        <li className="nav-link">Home</li>
-                        <li className="nav-link">Stats</li>
+                        <li><Link className="nav-link" to="/welcome/nbastats">Home</Link></li>
+                        <li><Link className="nav-link" to="/stats">Stats</Link></li>
                     </ul>
                     <ul className="navbar-nav navbar-collapse justify-content-end">
-                        <li className="nav-link">Login</li>
-                        <li className="nav-link">Logout</li>
+                        <li><Link className="nav-link" to="/login">Login</Link></li>
+                        <li><Link className="nav-link" to="/logout">Logout</Link></li>
                     </ul>
                 </nav>
             </header>
