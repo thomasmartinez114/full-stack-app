@@ -6,17 +6,15 @@ class NBAApp extends Component {
         return (
             <div className="NBAApp">
                 <Router>
-                    <>
-                        <HeaderComponent />
-                        <Switch>
-                            <Route path="/" exact component={LoginComponent} />
-                            <Route path="/login" component={LoginComponent} />
-                            <Route path="/welcome/:name" component={WelcomeComponent} />
-                            <Route path="/stats" component={StatsComponent} />
-                            <Route component={ErrorComponent} />
-                        </Switch>
-                        <FooterComponent />
-                    </>
+                    <HeaderComponent />
+                    <Switch>
+                        <Route path="/" exact component={LoginComponent} />
+                        <Route path="/login" component={LoginComponent} />
+                        <Route path="/welcome/:name" component={WelcomeComponent} />
+                        <Route path="/stats" component={StatsComponent} />
+                        <Route component={ErrorComponent} />
+                    </Switch>
+                    <FooterComponent />
                 </Router>
 
                 {/* <LoginComponent />
@@ -31,7 +29,7 @@ class HeaderComponent extends Component {
         return (
             <header>
                 <nav className="navbar navbar-expand-md navbar-light bg-light">
-                    <div><a href="#">nbastats</a></div>
+                    <div><a href="https://stats.nba.com/" target="_blank" className="navbar-brand">nbastats</a></div>
                     <ul className="navbar-nav">
                         <li className="nav-link">Home</li>
                         <li className="nav-link">Stats</li>
@@ -167,7 +165,7 @@ class LoginComponent extends Component {
     render() {
         return (
             <div>
-                <h1>Login</h1>
+                <h4>Login</h4>
                 <div className="container">
                     {/* <ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed} /> */}
                     {/* <ShowSuccessMessage showSuccessMessage={this.state.showSuccessMessage} /> */}
