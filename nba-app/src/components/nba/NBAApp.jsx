@@ -174,7 +174,7 @@ class LoginComponent extends Component {
     loginClicked() {
         //tmartinez, dummy
         if (this.state.username === 'tmartinez' && this.state.password === 'dummy') {
-            // Session storage on browser for logging in
+            // Session storage on browser for when user logs in
             AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password);
             this.props.history.push(`/welcome/${this.state.username}`);
             // console.log('Login Successful');
