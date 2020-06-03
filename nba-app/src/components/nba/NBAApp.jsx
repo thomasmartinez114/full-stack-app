@@ -28,7 +28,7 @@ class HeaderComponent extends Component {
     render() {
         return (
             <header>
-                <nav className="navbar navbar-expand-md navbar-light bg-light">
+                <nav className="navbar navbar-expand-md navbar-light bg-info">
                     <div><a href="https://stats.nba.com/" target="_blank" className="navbar-brand">nbastats</a></div>
                     <ul className="navbar-nav">
                         <li><Link className="nav-link" to="/welcome/nbastats">Home</Link></li>
