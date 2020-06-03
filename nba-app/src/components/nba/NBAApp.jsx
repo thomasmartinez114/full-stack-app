@@ -28,10 +28,13 @@ class NBAApp extends Component {
 
 class HeaderComponent extends Component {
     render() {
+        const isUserLoggedIn = AuthenticationService.isUserLoggedIn();
+        // console.log(isUserLoggedIn);
+
         return (
             <header>
                 <nav className="navbar navbar-expand-md navbar-light bg-info">
-                    <div><a href="https://stats.nba.com/" target="_blank" className="navbar-brand">nbastats</a></div>
+                    <div><a href="https://stats.nba.com/" className="navbar-brand">nbastats</a></div>
                     <ul className="navbar-nav">
                         <li><Link className="nav-link" to="/welcome/nbastats">Home</Link></li>
                         <li><Link className="nav-link" to="/stats">Stats</Link></li>
