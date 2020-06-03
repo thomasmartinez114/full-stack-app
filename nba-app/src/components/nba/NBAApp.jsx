@@ -85,29 +85,31 @@ class StatsComponent extends Component {
         return (
             <div>
                 <h4>More NBA Statistics coming soon. . . .</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Team</th>
-                            <th>Player</th>
-                            <th>PPG</th>
-                            <th>All-Star Selection</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            this.state.stats.map(
-                                stat =>
-                                    <tr>
-                                        <td>{stat.team}</td>
-                                        <td>{stat.player}</td>
-                                        <td>{stat.ppg}</td>
-                                        <td>{stat.allStar.toString()}</td>
-                                    </tr>
-                            )
-                        }
-                    </tbody>
-                </table>
+                <div className="container">
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th>Team</th>
+                                <th>Player</th>
+                                <th>PPG</th>
+                                <th>All-Star Selection</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                this.state.stats.map(
+                                    stat =>
+                                        <tr>
+                                            <td>{stat.team}</td>
+                                            <td>{stat.player}</td>
+                                            <td>{stat.ppg}</td>
+                                            <td>{stat.allStar.toString()}</td>
+                                        </tr>
+                                )
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         )
     }
