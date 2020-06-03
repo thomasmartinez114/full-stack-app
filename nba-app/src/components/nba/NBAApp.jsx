@@ -12,6 +12,7 @@ class NBAApp extends Component {
                         <Route path="/login" component={LoginComponent} />
                         <Route path="/welcome/:name" component={WelcomeComponent} />
                         <Route path="/stats" component={StatsComponent} />
+                        <Route path="/logout" component={LogoutComponent} />
                         <Route component={ErrorComponent} />
                     </Switch>
                     <FooterComponent />
@@ -50,6 +51,19 @@ class FooterComponent extends Component {
             <div>
                 <hr /> Footer
             </div>
+        )
+    }
+}
+
+class LogoutComponent extends Component {
+    render() {
+        return (
+            <>
+                <h3>You are logged out</h3>
+                <div className="container">
+                    Thank you for using our Application.
+                </div>
+            </>
         )
     }
 }
