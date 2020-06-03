@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import AuthenticationService from './AuthenticationService';
+import AuthenticationService from './AuthenticationService.js';
 
 class NBAApp extends Component {
     render() {
@@ -175,14 +175,14 @@ class LoginComponent extends Component {
         //tmartinez, dummy
         if (this.state.username === 'tmartinez' && this.state.password === 'dummy') {
             // Session storage on browser for logging in
-
+            AuthenticationService.registerSuccessfulLogin();
             this.props.history.push(`/welcome/${this.state.username}`);
-            console.log('Login Successful');
+            // console.log('Login Successful');
             // this.setState({ showSuccessMessage: true });
             // this.setState({ hasLoginFailed: false });
         }
         else {
-            console.log('Login Failed');
+            // console.log('Login Failed');
             this.setState({ showSuccessMessage: false });
             this.setState({ hasLoginFailed: true });
 
