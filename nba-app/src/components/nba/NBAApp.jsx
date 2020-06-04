@@ -33,7 +33,7 @@ class HeaderComponent extends Component {
 
         return (
             <header>
-                <nav className="navbar navbar-expand-md navbar-light bg-info">
+                <nav className="navbar navbar-expand-md navbar-dark bg-info">
                     <div><a href="https://stats.nba.com/" className="navbar-brand">nbastats</a></div>
                     <ul className="navbar-nav">
                         {isUserLoggedIn && <li><Link className="nav-link" to="/welcome/nbastats">Home</Link></li>}
