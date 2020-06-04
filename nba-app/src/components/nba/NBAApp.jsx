@@ -78,9 +78,9 @@ class StatsComponent extends Component {
         this.state = {
             stats:
                 [
-                    { team: 'LAL', player: 'LeBron James', ppg: 20.0, allStar: true },
-                    { team: 'GSW', player: 'Steph Curry', ppg: 25.0, allStar: true },
-                    { team: 'BOS', player: 'Jayson Tatum', ppg: 18.0, allStar: true }
+                    { id: 1, team: 'LAL', player: 'LeBron James', ppg: 27.0, allStar: true },
+                    { id: 2, team: 'GSW', player: 'Steph Curry', ppg: 25.0, allStar: true },
+                    { id: 3, team: 'BOS', player: 'Jayson Tatum', ppg: 18.0, allStar: true }
                 ]
         }
     }
@@ -93,6 +93,7 @@ class StatsComponent extends Component {
                     <table className="table">
                         <thead>
                             <tr>
+                                <th>Rank</th>
                                 <th>Team</th>
                                 <th>Player</th>
                                 <th>PPG</th>
@@ -104,6 +105,7 @@ class StatsComponent extends Component {
                                 this.state.stats.map(
                                     stat =>
                                         <tr key={stat.id}>
+                                            <td>{stat.id}</td>
                                             <td>{stat.team}</td>
                                             <td>{stat.player}</td>
                                             <td>{stat.ppg}</td>
