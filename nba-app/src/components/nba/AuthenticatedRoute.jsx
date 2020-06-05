@@ -5,9 +5,11 @@ import AuthenticationService from './AuthenticationService.js';
 class AuthenticatedRoute extends Component {
     render() {
         if (AuthenticationService.isUserLoggedIn()) {
-            <Route {...this.props} /> // spread operator
+            return <Route {...this.props} /> // spread operator
         } else {
-            <Redirect to="/login" />
+            return <Redirect to="/login" />
         }
     }
 }
+
+export default AuthenticatedRoute;
