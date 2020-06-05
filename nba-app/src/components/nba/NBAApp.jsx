@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import AuthenticationService from './AuthenticationService.js';
+import AuthenticatedRoute from './AuthenticatedRoute.jsx';
 
 class NBAApp extends Component {
     render() {
@@ -11,9 +12,9 @@ class NBAApp extends Component {
                     <Switch>
                         <Route path="/" exact component={LoginComponent} />
                         <Route path="/login" component={LoginComponent} />
-                        <Route path="/welcome/:name" component={WelcomeComponent} />
-                        <Route path="/stats" component={StatsComponent} />
-                        <Route path="/logout" component={LogoutComponent} />
+                        <AuthenticatedRoute path="/welcome/:name" component={WelcomeComponent} />
+                        <AuthenticatedRoute path="/stats" component={StatsComponent} />
+                        <AuthenticatedRoute path="/logout" component={LogoutComponent} />
                         <Route component={ErrorComponent} />
                     </Switch>
                     <FooterComponent />
