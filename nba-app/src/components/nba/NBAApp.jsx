@@ -4,6 +4,7 @@ import AuthenticationService from './AuthenticationService.js';
 import AuthenticatedRoute from './AuthenticatedRoute.jsx';
 import LoginComponent from './LoginComponent.jsx';
 import StatsComponent from './StatsComponent.jsx';
+import FooterComponent from './FooterComponent.jsx';
 
 class NBAApp extends Component {
     render() {
@@ -48,16 +49,6 @@ class HeaderComponent extends Component {
                     </ul>
                 </nav>
             </header>
-        )
-    }
-}
-
-class FooterComponent extends Component {
-    render() {
-        return (
-            <footer className="footer">
-                <span>All Rights Reserved 2020 @thomasmartinez1492</span>
-            </footer>
         )
     }
 }
