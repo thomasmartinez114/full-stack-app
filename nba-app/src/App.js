@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-// import FirstComponent from './components/learning-components/FirstComponent';
-// import SecondComponent from './components/learning-components/SecondComponent';
-// import ThirdComponent from './components/learning-components/ThirdComponent';
 import NBAApp from './components/nba/NBAApp';
-// import Counter from './components/counter/Counter';
 import './App.css';
 import './bootstrap.css';
 
