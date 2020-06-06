@@ -5,6 +5,7 @@ import LoginComponent from './LoginComponent.jsx';
 import StatsComponent from './StatsComponent.jsx';
 import FooterComponent from './FooterComponent.jsx';
 import HeaderComponent from './HeaderComponent.jsx';
+import LogoutComponent from './LogoutComponent.jsx';
 
 class NBAApp extends Component {
     render() {
@@ -26,19 +27,6 @@ class NBAApp extends Component {
                 {/* <LoginComponent />
                 <WelcomeComponent /> */}
             </div>
-        )
-    }
-}
-
-class LogoutComponent extends Component {
-    render() {
-        return (
-            <>
-                <h3>You are logged out</h3>
-                <div className="container">
-                    Thank you for using our Application.
-                </div>
-            </>
         )
     }
 }
