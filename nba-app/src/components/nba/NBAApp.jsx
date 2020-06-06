@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AuthenticatedRoute from './AuthenticatedRoute.jsx';
 import LoginComponent from './LoginComponent.jsx';
 import StatsComponent from './StatsComponent.jsx';
+import ErrorComponent from './ErrorComponent.jsx';
 import FooterComponent from './FooterComponent.jsx';
 import HeaderComponent from './HeaderComponent.jsx';
 import LogoutComponent from './LogoutComponent.jsx';
+import WelcomeComponent from './WelcomeComponent.jsx';
 
 class NBAApp extends Component {
     render() {
@@ -23,46 +25,9 @@ class NBAApp extends Component {
                     </Switch>
                     <FooterComponent />
                 </Router>
-
-                {/* <LoginComponent />
-                <WelcomeComponent /> */}
             </div>
         )
     }
-}
-
-class WelcomeComponent extends Component {
-    render() {
-        return (
-            <>
-                <h1>Welcome!</h1>
-                <div className="container">
-                    Welcome <b>{this.props.match.params.name}</b> to the NBA API.<br></br>
-                    You can view NBA stats <Link to="/stats">here</Link>
-                </div>
-            </>
-        )
-    }
-}
-
-function ErrorComponent() {
-    return <div>An Error Occurred.  Contact support at (555) 555-5555</div>
-}
-
-
-
-function ShowInvalidCredentials(props) {
-    if (props.hasLoginFailed) {
-        return <div>Invalid Credentials</div>
-    }
-    return null;
-}
-
-function ShowLoginSuccessMessage(props) {
-    if (props.showSuccessMessage) {
-        return <div>Login Successful</div>
-    }
-    return null;
 }
 
 export default NBAApp;
