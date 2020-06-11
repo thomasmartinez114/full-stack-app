@@ -10,6 +10,10 @@ class WelcomeComponent extends Component {
                     Welcome <b>{this.props.match.params.name}</b> to the NBA API.<br></br>
                     You can view NBA stats <Link to="/stats">here</Link>
                 </div>
+                <div className="container">
+                    Click here to get a customized welcome message.
+                    <button onClick={this.retrieveWelcomeMessage}>Get Welcome Message</button>
+                </div>
             </>
         )
     }
