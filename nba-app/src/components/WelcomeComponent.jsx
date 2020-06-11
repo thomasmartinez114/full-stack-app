@@ -12,7 +12,7 @@ class WelcomeComponent extends Component {
                 </div>
                 <div className="container">
                     Click here to get a customized welcome message.
-                    <button onClick={this.retrieveWelcomeMessage}>Get Welcome Message</button>
+                    <button onClick={this.retrieveWelcomeMessage} className="btn btn-success">Get Welcome Message</button>
                 </div>
             </>
         )
