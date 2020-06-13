@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import HelloWorldService from '../api/stats/HelloWorldService.js';
 
 class WelcomeComponent extends Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class WelcomeComponent extends Component {
     }
 
     retrieveWelcomeMessage() {
-        console.log('retrieve clicked');
+        HelloWorldService.executeHelloWorldService();
     }
 }
 
