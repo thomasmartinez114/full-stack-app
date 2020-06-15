@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NBAStats from '../images/nbastats.png';
 
 class StatsComponent extends Component {
     constructor(props) {

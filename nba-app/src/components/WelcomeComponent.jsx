@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import HelloWorldService from '../api/stats/HelloWorldService.js';
+import NBAStats from '../images/nbastats.png';
 
 class WelcomeComponent extends Component {
     constructor(props) {
@@ -26,6 +27,10 @@ class WelcomeComponent extends Component {
                 </div>
                 <div className="container">
                     {this.state.welcomeMessage}
+                </div>
+                <br />
+                <div className="container">
+                    <img src={NBAStats} alt="NBA Stats Logo" className='statsLogo' />
                 </div>
             </>
         )
