@@ -1,4 +1,4 @@
-package com.tmartinez.rest.webservices.restfulwebservices;
+package com.tmartinez.rest.webservices.restfulwebservices.helloworld;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.CrossOrigin;
