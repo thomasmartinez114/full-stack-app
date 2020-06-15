@@ -21,13 +21,13 @@ class WelcomeComponent extends Component {
                     Welcome <b>{this.props.match.params.name}</b> to the NBA API.<br></br>
                     You can view NBA stats <Link to="/stats">here</Link>
                 </div>
-                <div className="container">
+                {/* <div className="container">
                     Click here to get a customized welcome message.
                     <button onClick={this.retrieveWelcomeMessage} className="btn btn-success">Get Welcome Message</button>
                 </div>
                 <div className="container">
                     {this.state.welcomeMessage}
-                </div>
+                </div> */}
                 <br />
                 <div className="container">
                     <img src={NBAStats} alt="NBA Stats Logo" className='statsLogo' />
