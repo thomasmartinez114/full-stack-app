@@ -12,8 +12,8 @@ class HeaderComponent extends Component {
         return (
             <header>
                 <nav className="navbar navbar-expand-md navbar-dark bg-info">
-                    <div><img src={NBALogo} alt="NBA Logo" class="logo" /></div>
                     <ul className="navbar-nav">
+                        <div><img src={NBALogo} alt="NBA Logo" class="logo" /></div>
                         {isUserLoggedIn && <li><Link className="nav-link" to="/welcome/nbastats">Home</Link></li>}
                         {isUserLoggedIn && <li><Link className="nav-link" to="/stats">Stats</Link></li>}
                     </ul>

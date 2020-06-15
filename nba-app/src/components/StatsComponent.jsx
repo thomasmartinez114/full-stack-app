@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NBAStats from '../images/nbastats.png';
 
 class StatsComponent extends Component {
     constructor(props) {
@@ -43,6 +44,8 @@ class StatsComponent extends Component {
                             }
                         </tbody>
                     </table>
+                    <br />
+                    <img src={NBAStats} alt="NBA Stats Logo" className='statsLogo' />
                 </div>
             </div>
         )
