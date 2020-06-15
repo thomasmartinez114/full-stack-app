@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AuthenticationService from './AuthenticationService.js';
+import NBAStats from '../images/nbastats.png';
 
 class LoginComponent extends Component {
     constructor(props) {
@@ -59,7 +60,8 @@ class LoginComponent extends Component {
     render() {
         return (
             <div>
-                <h4>Login</h4>
+                {/* <h4>Login</h4> */}
+                <br />
                 <div className="container">
                     {/* <ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed} /> */}
                     {/* <ShowSuccessMessage showSuccessMessage={this.state.showSuccessMessage} /> */}
@@ -71,6 +73,8 @@ class LoginComponent extends Component {
                     Password: <input type="password" name="password" vale={this.state.password} onChange={this.handleChange} />
                     <button className="btn btn-success" onClick={this.loginClicked}>Login</button>
                 </div>
+                <br />
+                <img src={NBAStats} alt="NBA Stats Logo" className='statsLogo' />
             </div>
         )
     }

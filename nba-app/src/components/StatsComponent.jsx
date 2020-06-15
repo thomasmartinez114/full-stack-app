@@ -45,8 +45,6 @@ class StatsComponent extends Component {
                             }
                         </tbody>
                     </table>
-                    <br />
-                    <img src={NBAStats} alt="NBA Stats Logo" className='statsLogo' />
                 </div>
             </div>
         )
