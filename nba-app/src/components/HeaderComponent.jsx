@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AuthenticationService from './AuthenticationService.js';
 import { withRouter } from 'react-router';
+import NBALogo from '../images/NBA-icon.png';
 
 class HeaderComponent extends Component {
     render() {
@@ -11,7 +12,7 @@ class HeaderComponent extends Component {
         return (
             <header>
                 <nav className="navbar navbar-expand-md navbar-dark bg-info">
-                    <div><a href="https://stats.nba.com/" className="navbar-brand">NBA App</a></div>
+                    <div><img src={NBALogo} alt="NBA Logo" /></div>
                     <ul className="navbar-nav">
                         {isUserLoggedIn && <li><Link className="nav-link" to="/welcome/nbastats">Home</Link></li>}
                         {isUserLoggedIn && <li><Link className="nav-link" to="/stats">Stats</Link></li>}
