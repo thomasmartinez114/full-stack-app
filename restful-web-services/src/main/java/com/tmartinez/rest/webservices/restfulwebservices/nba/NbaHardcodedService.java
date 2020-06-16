@@ -13,9 +13,10 @@ public class NbaHardcodedService {
 	private static int idCounter = 0;
 	
 	static {
-		nbas.add(new Nba(++idCounter, "tmartinez", "My favorite player is Paul Pierce", new Date(), false));
-		nbas.add(new Nba(++idCounter, "tmartinez", "My favorite player is Kobe Bryant", new Date(), false));
-		nbas.add(new Nba(++idCounter, "tmartinez", "My favorite player is LeBron James", new Date(), false));
+		nbas.add(new Nba(++idCounter, "LeBron", "James", "SF", "LAL", 25.0));
+		nbas.add(new Nba(++idCounter, "Kobe", "Bryant", "SG", "LAL", 27.0));
+		nbas.add(new Nba(++idCounter, "Jayson", "Tatum", "SF", "BOS", 22.0));
+		nbas.add(new Nba(++idCounter, "Zion", "Williamson", "PF", "NOP", 25.0));
 	}
 	
 	public List<Nba> findAll() {
@@ -23,3 +24,10 @@ public class NbaHardcodedService {
 	}
 
 }
+
+//private long id;
+//private String firstName;
+//private String lastName;
+//private String position;
+//private String team;
+//private double pointPerGame;

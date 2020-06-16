@@ -16,8 +16,8 @@ public class NbaResource {
 	private NbaHardcodedService nbaService;
 	
 	
-	@GetMapping("/users/{username}/nbas")
-	public List<Nba> getAllNbas(@PathVariable String username) {
+	@GetMapping("/players/{lastName}/nbas")
+	public List<Nba> getAllNbas(@PathVariable String lastName) {
 		return nbaService.findAll();
 	}
 }
