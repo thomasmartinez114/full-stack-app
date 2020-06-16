@@ -10,7 +10,7 @@ public class Nba {
 	private String lastName;
 	private String position;
 	private String team;
-	private double pointPerGame;
+	private double pointsPerGame;
 
 	public Nba(long id, String username, String firstName, String lastName, String position, String team, double pointsPerGame) {
 		super();
@@ -20,7 +20,7 @@ public class Nba {
 		this.lastName = lastName;
 		this.position = position;
 		this.team = team;
-		this.pointPerGame = pointsPerGame;
+		this.pointsPerGame = pointsPerGame;
 	}
 
 	public long getId() {
@@ -71,12 +71,12 @@ public class Nba {
 		this.team = team;
 	}
 
-	public double getPointPerGame() {
-		return pointPerGame;
+	public double getPointsPerGame() {
+		return pointsPerGame;
 	}
 
-	public void setPointPerGame(float pointPerGame) {
-		this.pointPerGame = pointPerGame;
+	public void setPointsPerGame(float pointPerGame) {
+		this.pointsPerGame = pointsPerGame;
 	}
 
 //	private long id;

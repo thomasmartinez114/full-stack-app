@@ -21,7 +21,8 @@ class StatsComponent extends Component {
         NbaDataService.retrieveAllNba(username)
             .then(
                 response => {
-                    console.log(response);
+                    // console.log(response);
+                    this.setState({ stats: response.data })
                 }
             )
     }
@@ -34,11 +35,11 @@ class StatsComponent extends Component {
                     <table className="table">
                         <thead>
                             <tr>
-                                <th>Rank</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Position</th>
                                 <th>Team</th>
-                                <th>Player</th>
                                 <th>PPG</th>
-                                <th>All-Star Selection</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,11 +47,11 @@ class StatsComponent extends Component {
                                 this.state.stats.map(
                                     stat =>
                                         <tr key={stat.id}>
-                                            <td>{stat.id}</td>
+                                            <td>{stat.firstName}</td>
+                                            <td>{stat.lastName}</td>
+                                            <td>{stat.position}</td>
                                             <td>{stat.team}</td>
-                                            <td>{stat.player}</td>
-                                            <td>{stat.ppg}</td>
-                                            <td>{stat.allStar.toString()}</td>
+                                            <td>{stat.pointsPerGame}</td>
                                         </tr>
                                 )
                             }
