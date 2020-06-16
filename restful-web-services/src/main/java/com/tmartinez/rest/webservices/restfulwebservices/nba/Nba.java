@@ -1,21 +1,21 @@
-package com.tmartinez.rest.webservices.restfulwebservices.stats;
+package com.tmartinez.rest.webservices.restfulwebservices.nba;
 
 import java.util.Date;
 
-public class Stats {
+public class Nba {
 	private long id;
 	private String username;
-	private String description;
+	private String descripiton;
 	private Date targetDate;
-	private boolean isDone;
+	private boolean isdone;
 
-	public Stats(long id, String username, String description, Date targetDate, boolean isDone) {
+	public Nba(long id, String username, String descripiton, Date targetDate, boolean isdone) {
 		super();
 		this.id = id;
 		this.username = username;
-		this.description = description;
+		this.descripiton = descripiton;
 		this.targetDate = targetDate;
-		this.isDone = isDone;
+		this.isdone = isdone;
 	}
 
 	public long getId() {
@@ -34,12 +34,12 @@ public class Stats {
 		this.username = username;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getDescripiton() {
+		return descripiton;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDescripiton(String descripiton) {
+		this.descripiton = descripiton;
 	}
 
 	public Date getTargetDate() {
@@ -50,12 +50,12 @@ public class Stats {
 		this.targetDate = targetDate;
 	}
 
-	public boolean isDone() {
-		return isDone;
+	public boolean isIsdone() {
+		return isdone;
 	}
 
-	public void setDone(boolean isDone) {
-		this.isDone = isDone;
+	public void setIsdone(boolean isdone) {
+		this.isdone = isdone;
 	}
 
 }
