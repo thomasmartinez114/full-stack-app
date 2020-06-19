@@ -13,10 +13,10 @@ public class NbaHardcodedService {
 	private static int idCounter = 0;
 	
 	static {
-		nbas.add(new Nba(++idCounter, "tmartinez", "LeBron", "James", "SF", "LAL", 25.0));
-		nbas.add(new Nba(++idCounter, "tmartinez", "Kobe", "Bryant", "SG", "LAL", 27.0));
-		nbas.add(new Nba(++idCounter, "tmartinez", "Jayson", "Tatum", "SF", "BOS", 22.0));
-		nbas.add(new Nba(++idCounter, "tmartinez", "Zion", "Williamson", "PF", "NOP", 25.0));
+		nbas.add(new Nba(++idCounter, "LeBron", "James", "SF", "LAL", 25.0));
+		nbas.add(new Nba(++idCounter, "Kobe", "Bryant", "SG", "LAL", 27.0));
+		nbas.add(new Nba(++idCounter, "Jayson", "Tatum", "SF", "BOS", 22.0));
+		nbas.add(new Nba(++idCounter, "Zion", "Williamson", "PF", "NOP", 25.0));
 	}
 	
 	public List<Nba> findAll() {

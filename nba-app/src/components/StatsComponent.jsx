@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NbaDataService from '../api/stats/NbaDataService.js';
-import AuthenticationService from './AuthenticationService.js';
+// import AuthenticationService from './AuthenticationService.js';
 
 class StatsComponent extends Component {
     constructor(props) {
@@ -19,8 +19,8 @@ class StatsComponent extends Component {
 
     componentDidMount() {
         console.log('componentDidMount')
-        let username = AuthenticationService.getLoggedInUserName();
-        NbaDataService.retrieveAllNba(username)
+        // let username = AuthenticationService.getLoggedInUserName();
+        NbaDataService.retrieveAllNba()
             .then(
                 response => {
                     // console.log(response);

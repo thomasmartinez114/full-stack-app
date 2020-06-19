@@ -5,17 +5,17 @@ package com.tmartinez.rest.webservices.restfulwebservices.nba;
 public class Nba {
 
 	private long id;
-	private String username;
+//	private String username;
 	private String firstName;
 	private String lastName;
 	private String position;
 	private String team;
 	private double pointsPerGame;
 
-	public Nba(long id, String username, String firstName, String lastName, String position, String team, double pointsPerGame) {
+	public Nba(long id, String firstName, String lastName, String position, String team, double pointsPerGame) {
 		super();
 		this.id = id;
-		this.username = username;
+//		this.username = username;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.position = position;
@@ -31,13 +31,13 @@ public class Nba {
 		this.id = id;
 	}
 	
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
+//	public String getUsername() {
+//		return username;
+//	}
+//
+//	public void setUsername(String username) {
+//		this.username = username;
+//	}
 
 	public String getFirstName() {
 		return firstName;
