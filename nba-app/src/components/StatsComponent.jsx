@@ -4,6 +4,7 @@ import AuthenticationService from './AuthenticationService.js';
 
 class StatsComponent extends Component {
     constructor(props) {
+        console.log('constructor')
         super(props)
         this.state = {
             stats:
@@ -17,6 +18,7 @@ class StatsComponent extends Component {
     }
 
     componentDidMount() {
+        console.log('componentDidMount')
         let username = AuthenticationService.getLoggedInUserName();
         NbaDataService.retrieveAllNba(username)
             .then(
@@ -28,6 +30,7 @@ class StatsComponent extends Component {
     }
 
     render() {
+        console.log('render')
         return (
             <div>
                 <h4>More NBA Statistics coming soon. . . .</h4>
