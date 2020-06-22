@@ -7,14 +7,10 @@ class StatsComponent extends Component {
         console.log('constructor')
         super(props)
         this.state = {
-            stats:
-                [
-                    // { id: 1, team: 'LAL', player: 'LeBron James', ppg: 27.0, allStar: true },
-                    // { id: 2, team: 'GSW', player: 'Steph Curry', ppg: 25.0, allStar: true },
-                    // { id: 3, team: 'BOS', player: 'Jayson Tatum', ppg: 18.0, allStar: true },
-                    // { id: 4, team: 'HOU', player: 'James Harden', ppg: 15.0, allStar: true }
-                ]
+            stats: [],
+            message: null
         }
+        this.deleteNbaClicked = this.deleteNbaClicked.bind(this);
     }
 
     componentDidMount() {
@@ -29,11 +25,22 @@ class StatsComponent extends Component {
             )
     }
 
+    deleteNbaClicked(id) {
+        // console.log("ID: " + id);
+        NbaDataService.deleteNba(id)
+            .then(
+                response => {
+                    this.setState({ message: `Delete of stat ${id} successful!` });
+                }
+            )
+    }
+
     render() {
         console.log('render')
         return (
             <div>
                 <h4>More NBA Statistics coming soon. . . .</h4>
+                {this.state.message && <div className="alert alert-success">{this.state.message}</div>}
                 <div className="container">
                     <table className="table">
                         <thead>
@@ -56,7 +63,7 @@ class StatsComponent extends Component {
                                             <td>{stat.position}</td>
                                             <td>{stat.team}</td>
                                             <td>{stat.pointsPerGame}</td>
-                                            <td><button className="btn btn-warning">Delete</button></td>
+                                            <td><button className="btn btn-warning" onClick={() => this.deleteNbaClicked(stat.id)}>Delete</button></td>
                                         </tr>
                                 )
                             }
