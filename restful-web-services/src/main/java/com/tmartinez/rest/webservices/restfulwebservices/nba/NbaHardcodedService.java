@@ -22,6 +22,28 @@ public class NbaHardcodedService {
 	public List<Nba> findAll() {
 		return nbas;
 	}
+	
+	public Nba deleteById(long id) {
+		Nba nba = findById(id);
+		
+		if(nba==null) return null;
+		
+		if(nbas.remove(nba)) {
+			return nba;
+		}
+		return null;
+	}
+
+	public Nba findById(long id) {
+		for (Nba nba:nbas) {
+			if(nba.getId() == id) {
+				return nba;
+			}
+		}
+		return null;
+	}
+	
+	
 
 }
 
