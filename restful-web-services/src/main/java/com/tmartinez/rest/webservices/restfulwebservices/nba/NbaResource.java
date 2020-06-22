@@ -19,7 +19,8 @@ public class NbaResource {
 	
 	
 	@GetMapping("/nba/stats")
-	public List<Nba> getAllNbas() {
+	public List<Nba> getAllNbas(){
+//		Thread.sleep(3000);
 		return nbaService.findAll();
 	}
 	

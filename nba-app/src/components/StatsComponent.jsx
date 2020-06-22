@@ -17,6 +17,10 @@ class StatsComponent extends Component {
         }
     }
 
+    componentWillUnmount() {
+        console.log('componentWillUnmount')
+    }
+
     componentDidMount() {
         console.log('componentDidMount')
         // let username = AuthenticationService.getLoggedInUserName();
