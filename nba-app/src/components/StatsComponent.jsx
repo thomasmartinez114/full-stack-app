@@ -11,10 +11,16 @@ class StatsComponent extends Component {
             message: null
         }
         this.deleteNbaClicked = this.deleteNbaClicked.bind(this);
+        this.refreshStats = this.refreshStats.bind(this);
     }
 
     componentDidMount() {
         console.log('componentDidMount')
+        this.refreshStats();
+        console.log(this.state)
+    }
+
+    refreshStats() {
         // let username = AuthenticationService.getLoggedInUserName();
         NbaDataService.retrieveAllNba()
             .then(
@@ -31,6 +37,7 @@ class StatsComponent extends Component {
             .then(
                 response => {
                     this.setState({ message: `Delete of stat ${id} successful!` });
+                    this.refreshStats(); // Only refresh on successful response
                 }
             )
     }
