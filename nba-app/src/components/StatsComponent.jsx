@@ -43,6 +43,7 @@ class StatsComponent extends Component {
                                 <th>Position</th>
                                 <th>Team</th>
                                 <th>PPG</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,6 +56,7 @@ class StatsComponent extends Component {
                                             <td>{stat.position}</td>
                                             <td>{stat.team}</td>
                                             <td>{stat.pointsPerGame}</td>
+                                            <td><button className="btn btn-warning">Delete</button></td>
                                         </tr>
                                 )
                             }
