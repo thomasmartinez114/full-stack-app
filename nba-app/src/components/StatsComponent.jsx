@@ -21,6 +21,14 @@ class StatsComponent extends Component {
         console.log('componentWillUnmount')
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('shouldComponentUpdate');
+        console.log(nextProps);
+        console.log(nextState);
+        return false; // even if state is update do not do render
+        // return true; // will return the render if update
+    }
+
     componentDidMount() {
         console.log('componentDidMount')
         // let username = AuthenticationService.getLoggedInUserName();
