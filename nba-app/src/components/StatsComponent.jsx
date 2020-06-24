@@ -57,6 +57,7 @@ class StatsComponent extends Component {
                                 <th>Position</th>
                                 <th>Team</th>
                                 <th>PPG</th>
+                                <th>Update</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
@@ -70,6 +71,7 @@ class StatsComponent extends Component {
                                             <td>{stat.position}</td>
                                             <td>{stat.team}</td>
                                             <td>{stat.pointsPerGame}</td>
+                                            <td><button className="btn btn-success" onClick={() => this.updateNbaClicked(stat.id)}>Update</button></td>
                                             <td><button className="btn btn-warning" onClick={() => this.deleteNbaClicked(stat.id)}>Delete</button></td>
                                         </tr>
                                 )
