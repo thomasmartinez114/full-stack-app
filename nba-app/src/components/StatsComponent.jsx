@@ -11,6 +11,7 @@ class StatsComponent extends Component {
             message: null
         }
         this.deleteNbaClicked = this.deleteNbaClicked.bind(this);
+        this.updateNbaClicked = this.updateNbaClicked.bind(this);
         this.refreshStats = this.refreshStats.bind(this);
     }
 
@@ -40,6 +41,10 @@ class StatsComponent extends Component {
                     this.refreshStats(); // Only refresh on successful response
                 }
             )
+    }
+
+    updateNbaClicked(id) {
+        console.log('update ' + id)
     }
 
     render() {
