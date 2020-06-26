@@ -45,6 +45,8 @@ class StatsComponent extends Component {
 
     updateNbaClicked(id) {
         console.log('update ' + id)
+        this.props.history.push(`/nba/stats/${id}`)
+        // /nba/stats/${id}
     }
 
     render() {

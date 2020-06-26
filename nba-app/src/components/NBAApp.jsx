@@ -8,6 +8,7 @@ import FooterComponent from './FooterComponent.jsx';
 import HeaderComponent from './HeaderComponent.jsx';
 import LogoutComponent from './LogoutComponent.jsx';
 import WelcomeComponent from './WelcomeComponent.jsx';
+import StatComponent from './StatComponent.jsx';
 
 class NBAApp extends Component {
     render() {
@@ -21,6 +22,7 @@ class NBAApp extends Component {
                         <AuthenticatedRoute path="/welcome/:name" component={WelcomeComponent} />
                         <AuthenticatedRoute path="/nba/stats" component={StatsListComponent} />
                         <AuthenticatedRoute path="/logout" component={LogoutComponent} />
+                        <AuthenticatedRoute path="/nba/stats/:id" component={StatComponent} />
                         <Route component={ErrorComponent} />
                     </Switch>
                     <FooterComponent />
