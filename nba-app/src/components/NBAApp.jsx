@@ -20,9 +20,9 @@ class NBAApp extends Component {
                         <Route path="/" exact component={LoginComponent} />
                         <Route path="/login" component={LoginComponent} />
                         <AuthenticatedRoute path="/welcome/:name" component={WelcomeComponent} />
+                        <AuthenticatedRoute path="/nba/stats/:id" component={StatComponent} />
                         <AuthenticatedRoute path="/nba/stats" component={StatsListComponent} />
                         <AuthenticatedRoute path="/logout" component={LogoutComponent} />
-                        <AuthenticatedRoute path="/nba/stats/:id" component={StatComponent} />
                         <Route component={ErrorComponent} />
                     </Switch>
                     <FooterComponent />
