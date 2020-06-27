@@ -15,10 +15,23 @@ class StatComponent extends Component {
     }
 
     render() {
+        let firstName = this.state.firstName
+        let lastName = this.state.lastName
+        let position = this.state.position
+        let team = this.state.team
+        let ppg = this.state.ppg
         return (<div>
             <h1>Stat</h1>
             <div className="container">
-                <Formik>
+                <Formik
+                    initialValues={{
+                        firstName: firstName,
+                        lastName: lastName,
+                        position: position,
+                        team: team,
+                        ppg: ppg
+                    }}
+                >
                     {
                         (props) => (
                             <Form>
@@ -36,7 +49,7 @@ class StatComponent extends Component {
                                 </fieldset>
                                 <fieldset className="form-group">
                                     <label>Team</label>
-                                    <Field className="form-control" type="text" name="Team" />
+                                    <Field className="form-control" type="text" name="team" />
                                 </fieldset>
                                 <fieldset className="form-group">
                                     <label>PPG</label>
