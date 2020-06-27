@@ -25,11 +25,11 @@ class StatComponent extends Component {
             <div className="container">
                 <Formik
                     initialValues={{
-                        firstName: firstName,
-                        lastName: lastName,
-                        position: position,
-                        team: team,
-                        ppg: ppg
+                        firstName,
+                        lastName,
+                        position,
+                        team,
+                        ppg
                     }}
                 >
                     {
