@@ -15,11 +15,13 @@ class StatComponent extends Component {
     }
 
     render() {
-        let firstName = this.state.firstName
-        let lastName = this.state.lastName
-        let position = this.state.position
-        let team = this.state.team
-        let ppg = this.state.ppg
+        // let firstName = this.state.firstName
+        // let lastName = this.state.lastName
+        // let position = this.state.position
+        // let team = this.state.team
+        // let ppg = this.state.ppg
+        let { firstName, lastName, position, team, ppg } = this.state
+
         return (<div>
             <h1>Stat</h1>
             <div className="container">
