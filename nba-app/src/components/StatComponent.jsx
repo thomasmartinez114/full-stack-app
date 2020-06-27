@@ -12,8 +12,13 @@ class StatComponent extends Component {
             team: 'Boston',
             ppg: 30
         }
+
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
+    onSubmit(values) {
+        console.log(values);
+    }
     render() {
         // let firstName = this.state.firstName
         // let lastName = this.state.lastName
@@ -33,6 +38,7 @@ class StatComponent extends Component {
                         team,
                         ppg
                     }}
+                    onSubmit={this.onSubmit}
                 >
                     {
                         (props) => (
