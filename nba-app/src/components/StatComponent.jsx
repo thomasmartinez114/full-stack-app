@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 class StatComponent extends Component {
     constructor(props) {
@@ -51,7 +51,7 @@ class StatComponent extends Component {
                     {
                         (props) => (
                             <Form>
-
+                                <ErrorMessage name="lastName" component="div" className="alert alert-warning" />
                                 <fieldset className="form-group">
                                     <label>First Name</label>
                                     <Field className="form-control" type="text" name="firstName" />
