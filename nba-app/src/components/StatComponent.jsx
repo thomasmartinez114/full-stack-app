@@ -33,8 +33,8 @@ class StatComponent extends Component {
 
         if (!values.position) {
             errors.position = "Enter a position"
-        } else if (values.position.length < 2) {
-            errors.position = "Enter atleast 2 characters in the position"
+        } else if (values.position.length > 2) {
+            errors.position = "Enter a valid position - 2 characters max"
         }
 
         if (!values.team) {
@@ -45,8 +45,8 @@ class StatComponent extends Component {
 
         if (!values.ppg) {
             errors.ppg = "Enter ppg"
-        } else if (values.ppg.length < 2) {
-            errors.ppg = "Enter atleast 2 characters in the ppg"
+        } else if (values.ppg.length > 4) {
+            errors.ppg = "Enter a valid PPG - Ex) 20.1"
         }
 
         return errors;
