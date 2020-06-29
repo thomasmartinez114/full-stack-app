@@ -14,8 +14,15 @@ class StatComponent extends Component {
         }
 
         this.onSubmit = this.onSubmit.bind(this);
+        this.validate = this.validate.bind(this);
     }
 
+    validate(values) {
+        let errors = { lastName: 'Should have atleast 5 characters' }
+        console.log(values);
+        return errors;
+
+    }
     onSubmit(values) {
         console.log(values);
     }
@@ -39,10 +46,12 @@ class StatComponent extends Component {
                         ppg
                     }}
                     onSubmit={this.onSubmit}
+                    validate={this.validate}
                 >
                     {
                         (props) => (
                             <Form>
+
                                 <fieldset className="form-group">
                                     <label>First Name</label>
                                     <Field className="form-control" type="text" name="firstName" />
