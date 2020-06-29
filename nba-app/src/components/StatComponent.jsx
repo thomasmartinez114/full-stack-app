@@ -75,6 +75,8 @@ class StatComponent extends Component {
                         ppg
                     }}
                     onSubmit={this.onSubmit}
+                    validateOnChange={false}
+                    validateOnBlur={false}
                     validate={this.validate}
                 >
                     {
