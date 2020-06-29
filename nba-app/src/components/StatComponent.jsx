@@ -18,8 +18,37 @@ class StatComponent extends Component {
     }
 
     validate(values) {
-        let errors = { lastName: 'Should have atleast 5 characters' }
-        console.log(values);
+        let errors = {}
+        if (!values.firstName) {
+            errors.firstName = "Enter a First Name"
+        } else if (values.firstName.length < 2) {
+            errors.firstName = "Enter atleast 2 characters in the First Name"
+        }
+
+        if (!values.lastName) {
+            errors.lastName = "Enter a Last Name"
+        } else if (values.lastName.length < 2) {
+            errors.lastName = "Enter atleast 2 characters in the Last Name"
+        }
+
+        if (!values.position) {
+            errors.position = "Enter a position"
+        } else if (values.position.length < 2) {
+            errors.position = "Enter atleast 2 characters in the position"
+        }
+
+        if (!values.team) {
+            errors.team = "Enter a team"
+        } else if (values.team.length < 2) {
+            errors.team = "Enter atleast 2 characters in the team"
+        }
+
+        if (!values.ppg) {
+            errors.ppg = "Enter ppg"
+        } else if (values.ppg.length < 2) {
+            errors.ppg = "Enter atleast 2 characters in the ppg"
+        }
+
         return errors;
 
     }
@@ -51,7 +80,13 @@ class StatComponent extends Component {
                     {
                         (props) => (
                             <Form>
+                                {/* Error Messages */}
+                                <ErrorMessage name="firstName" component="div" className="alert alert-warning" />
                                 <ErrorMessage name="lastName" component="div" className="alert alert-warning" />
+                                <ErrorMessage name="position" component="div" className="alert alert-warning" />
+                                <ErrorMessage name="team" component="div" className="alert alert-warning" />
+                                <ErrorMessage name="ppg" component="div" className="alert alert-warning" />
+
                                 <fieldset className="form-group">
                                     <label>First Name</label>
                                     <Field className="form-control" type="text" name="firstName" />
