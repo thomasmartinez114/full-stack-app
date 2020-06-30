@@ -53,7 +53,9 @@ class StatsComponent extends Component {
         console.log('render')
         return (
             <div>
-                <h4>More NBA Statistics coming soon. . . .</h4>
+                <br />
+                <h4>More Stats coming soon. . . .</h4>
+                <br />
                 {this.state.message && <div className="alert alert-success">{this.state.message}</div>}
                 <div className="container">
                     <table className="table">
