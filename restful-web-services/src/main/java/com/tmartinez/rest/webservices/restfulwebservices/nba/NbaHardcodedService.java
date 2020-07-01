@@ -17,6 +17,7 @@ public class NbaHardcodedService {
 		nbas.add(new Nba(++idCounter, "Kobe", "Bryant", "SG", "LAL", 27.0));
 		nbas.add(new Nba(++idCounter, "Jayson", "Tatum", "SF", "BOS", 22.0));
 		nbas.add(new Nba(++idCounter, "Zion", "Williamson", "PF", "NOP", 25.0));
+		nbas.add(new Nba(++idCounter, "Ja", "Morant", "PG", "MEM", 19.0))
 	}
 	
 	public List<Nba> findAll() {
