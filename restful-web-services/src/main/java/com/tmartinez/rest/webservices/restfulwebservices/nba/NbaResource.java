@@ -26,10 +26,12 @@ public class NbaResource {
 		return nbaService.findAll();
 	}
 	
-//	@GetMapping("/{username}/players/nbas")
-//	public List<Nba> getAllNbas(@PathVariable String username) {
-//		return nbaService.findAll();
-//	}
+	@GetMapping("/nba/stats/{id}")
+	public Nba getNba(@PathVariable long id){
+//		Thread.sleep(3000);
+		return nbaService.findById(id);
+	}
+	
 	
 	// DELETE
 	// /nba/stats/{id}
