@@ -10,9 +10,9 @@ public class Nba {
 	private String lastName;
 	private String position;
 	private String team;
-	private double pointsPerGame;
+	private String pointsPerGame;
 
-	public Nba(long id, String firstName, String lastName, String position, String team, double pointsPerGame) {
+	public Nba(long id, String firstName, String lastName, String position, String team, String pointsPerGame) {
 		super();
 		this.id = id;
 //		this.username = username;
@@ -71,11 +71,11 @@ public class Nba {
 		this.team = team;
 	}
 
-	public double getPointsPerGame() {
+	public String getPointsPerGame() {
 		return pointsPerGame;
 	}
 
-	public void setPointsPerGame(float pointPerGame) {
+	public void setPointsPerGame(String pointsPerGame) {
 		this.pointsPerGame = pointsPerGame;
 	}
 

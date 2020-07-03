@@ -5,13 +5,14 @@ import NbaDataService from '../api/stats/NbaDataService';
 class StatComponent extends Component {
     constructor(props) {
         super(props)
+
         this.state = {
             id: this.props.match.params.id,
-            firstName: 'Larry',
-            lastName: 'Bird',
-            position: 'SF',
-            team: 'Boston',
-            ppg: 30
+            firstName: '',
+            lastName: '',
+            position: '',
+            team: '',
+            pointsPerGame: ''
         }
 
         this.onSubmit = this.onSubmit.bind(this);
@@ -25,7 +26,7 @@ class StatComponent extends Component {
                 lastName: response.data.lastName,
                 position: response.data.position,
                 team: response.data.team,
-                ppg: response.data.ppg
+                pointsPerGame: response.data.pointsPerGame
             }))
     }
 
@@ -55,10 +56,10 @@ class StatComponent extends Component {
             errors.team = "Enter atleast 2 characters in the team"
         }
 
-        if (!values.ppg) {
-            errors.ppg = "Enter ppg"
-        } else if (values.ppg.length > 4) {
-            errors.ppg = "Enter a valid PPG - Ex) 20.1"
+        if (!values.pointsPerGame) {
+            errors.pointsPerGame = "Enter ppg"
+        } else if (values.pointsPerGame.length > 4) {
+            errors.pointsPerGame = "Enter a valid PPG - Ex) 20.1"
         }
 
         return errors;
@@ -73,7 +74,7 @@ class StatComponent extends Component {
         // let position = this.state.position
         // let team = this.state.team
         // let ppg = this.state.ppg
-        let { firstName, lastName, position, team, ppg } = this.state
+        let { firstName, lastName, position, team, pointsPerGame } = this.state
 
         return (<div>
             <h1>Stat</h1>
@@ -84,7 +85,7 @@ class StatComponent extends Component {
                         lastName,
                         position,
                         team,
-                        ppg
+                        pointsPerGame
                     }}
                     onSubmit={this.onSubmit}
                     validateOnChange={false}
@@ -100,14 +101,14 @@ class StatComponent extends Component {
                                 <ErrorMessage name="lastName" component="div" className="alert alert-warning" />
                                 <ErrorMessage name="position" component="div" className="alert alert-warning" />
                                 <ErrorMessage name="team" component="div" className="alert alert-warning" />
-                                <ErrorMessage name="ppg" component="div" className="alert alert-warning" />
+                                <ErrorMessage name="pointsPerGame" component="div" className="alert alert-warning" />
 
                                 <fieldset className="form-group">
                                     <label>First Name</label>
                                     <Field className="form-control" type="text" name="firstName" />
                                 </fieldset>
                                 <fieldset className="form-group">
-                                    <label>lastName Name</label>
+                                    <label>Last Name</label>
                                     <Field className="form-control" type="text" name="lastName" />
                                 </fieldset>
                                 <fieldset className="form-group">
@@ -120,7 +121,7 @@ class StatComponent extends Component {
                                 </fieldset>
                                 <fieldset className="form-group">
                                     <label>PPG</label>
-                                    <Field className="form-control" type="text" name="ppg" />
+                                    <Field className="form-control" type="text" name="pointsPerGame" />
                                 </fieldset>
                                 <button className="btn btn-success" type="submit">Save</button>
                             </Form>
