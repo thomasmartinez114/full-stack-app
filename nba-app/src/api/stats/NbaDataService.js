@@ -1,8 +1,15 @@
 import axios from 'axios';
 
 class NbaDataService {
+
+    // GET all NBA Stats
     retrieveAllNba() {
         return axios.get(`http://localhost:8080/nba/stats`);
+    }
+
+    // GET specified stat
+    retrieveNba(id) {
+        return axios.get(`http://localhost:8080/nba/stats/${id}`);
     }
 
     // DELETE NBA stat

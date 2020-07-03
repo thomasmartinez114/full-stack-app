@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import NbaDataService from '../api/stats/NbaDataService';
 
 class StatComponent extends Component {
     constructor(props) {
@@ -15,6 +16,17 @@ class StatComponent extends Component {
 
         this.onSubmit = this.onSubmit.bind(this);
         this.validate = this.validate.bind(this);
+    }
+
+    componentDidMount() {
+        NbaDataService.retrieveNba(this.state.id)
+            .then(response => this.setState({
+                firstName: response.data.firstName,
+                lastName: response.data.lastName,
+                position: response.data.position,
+                team: response.data.team,
+                ppg: response.data.ppg
+            }))
     }
 
     validate(values) {
