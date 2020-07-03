@@ -90,6 +90,7 @@ class StatComponent extends Component {
                     validateOnChange={false}
                     validateOnBlur={false}
                     validate={this.validate}
+                    enableReinitialize={true}
                 >
                     {
                         (props) => (
