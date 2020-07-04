@@ -20,6 +20,11 @@ class StatComponent extends Component {
     }
 
     componentDidMount() {
+
+        if (this.state.id === -1) {
+            return
+        }
+
         NbaDataService.retrieveNba(this.state.id)
             .then(response => this.setState({
                 firstName: response.data.firstName,
@@ -65,16 +70,29 @@ class StatComponent extends Component {
         return errors;
 
     }
-    onSubmit(values) {
-        NbaDataService.updateNba(this.state.id, {
-            id: this.state.id,
-            firstName: values.firstName,
-            lastName: values.lastName,
-            position: values.position,
-            team: values.team,
-            pointsPerGame: values.pointsPerGame,
 
-        }).then(() => this.props.history.push('/nba/stats')) // Redirect to the stats page when successfully updating stat
+
+    onSubmit(values) {
+
+        if (this.state.id === -1) {
+            NbaDataService.createNba({
+                id: this.state.id,
+                firstName: values.firstName,
+                lastName: values.lastName,
+                position: values.position,
+                team: values.team,
+                pointsPerGame: values.pointsPerGame
+            }).then(() => this.props.history.push('/nba/stats')) // Redirect to the stats page when successfully updating stat
+        } else {
+            NbaDataService.updateNba(this.state.id, {
+                id: this.state.id,
+                firstName: values.firstName,
+                lastName: values.lastName,
+                position: values.position,
+                team: values.team,
+                pointsPerGame: values.pointsPerGame
+            }).then(() => this.props.history.push('/nba/stats')) // Redirect to the stats page when successfully updating stat
+        }
 
         console.log(values);
     }

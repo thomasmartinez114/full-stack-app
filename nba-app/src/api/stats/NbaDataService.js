@@ -21,6 +21,11 @@ class NbaDataService {
     updateNba(id, nba) {
         return axios.put(`http://localhost:8080/nba/stats/${id}`, nba);
     }
+
+    // CREATE NBA stat
+    createNba(nba) {
+        return axios.post(`http://localhost:8080/nba/stats/`, nba);
+    }
 }
 
 export default new NbaDataService();
