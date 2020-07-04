@@ -66,14 +66,18 @@ class StatComponent extends Component {
 
     }
     onSubmit(values) {
+        NbaDataService.updateNba(this.state.id, {
+            id: this.state.id,
+            firstName: values.firstName,
+            lastName: values.lastName,
+            position: values.position,
+            team: values.team,
+            pointsPerGame: values.pointsPerGame,
+
+        })
         console.log(values);
     }
     render() {
-        // let firstName = this.state.firstName
-        // let lastName = this.state.lastName
-        // let position = this.state.position
-        // let team = this.state.team
-        // let ppg = this.state.ppg
         let { firstName, lastName, position, team, pointsPerGame } = this.state
 
         return (<div>

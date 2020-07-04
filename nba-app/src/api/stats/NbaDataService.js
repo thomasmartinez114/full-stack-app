@@ -16,6 +16,11 @@ class NbaDataService {
     deleteNba(id) {
         return axios.delete(`http://localhost:8080/nba/stats/${id}`);
     }
+
+    // UPDATE NBA stat
+    updateNba(id, nba) {
+        return axios.put(`http://localhost:8080/nba/stats/${id}`, nba);
+    }
 }
 
 export default new NbaDataService();
