@@ -24,6 +24,18 @@ public class NbaHardcodedService {
 		return nbas;
 	}
 	
+	// Updating & Saving Nba
+	public Nba save(Nba nba) {
+		if(nba.getId()==-1) {
+			nba.setId(++idCounter);
+			nbas.add(nba);
+		} else {
+			 deleteById(nba.getId());
+			 nbas.add(nba);
+		}
+		return nba;
+	}
+	
 	public Nba deleteById(long id) {
 		Nba nba = findById(id);
 		
