@@ -13,6 +13,7 @@ class StatsComponent extends Component {
         this.deleteNbaClicked = this.deleteNbaClicked.bind(this);
         this.updateNbaClicked = this.updateNbaClicked.bind(this);
         this.refreshStats = this.refreshStats.bind(this);
+        this.addNbaClicked = this.addNbaClicked.bind(this);
     }
 
     componentDidMount() {
@@ -47,6 +48,10 @@ class StatsComponent extends Component {
         console.log('update ' + id)
         this.props.history.push(`/nba/stats/${id}`)
         // /nba/stats/${id}
+    }
+
+    addNbaClicked() {
+        this.props.history.push(`/nba/stats/-1`)
     }
 
     render() {
@@ -88,7 +93,7 @@ class StatsComponent extends Component {
                         </tbody>
                     </table>
                     <div className="row">
-                        <button className="btn btn-success">Add</button>
+                        <button className="btn btn-success" onClick={this.addNbaClicked}>Add</button>
                     </div>
                 </div>
             </div>
