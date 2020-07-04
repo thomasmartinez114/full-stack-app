@@ -74,7 +74,8 @@ class StatComponent extends Component {
             team: values.team,
             pointsPerGame: values.pointsPerGame,
 
-        })
+        }).then(() => this.props.history.push('/nba/stats')) // Redirect to the stats page when successfully updating stat
+
         console.log(values);
     }
     render() {
