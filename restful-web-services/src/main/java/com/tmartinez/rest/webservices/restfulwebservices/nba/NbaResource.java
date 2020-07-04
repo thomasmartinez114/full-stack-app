@@ -1,5 +1,6 @@
 package com.tmartinez.rest.webservices.restfulwebservices.nba;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +10,11 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 //import com.tmartinez.rest.webservices.restfulwebservices.nba.Nba;
 
@@ -64,5 +67,21 @@ public class NbaResource {
 	
 	//Create a new Stat
 	//POST /nba/stats/
+	@PostMapping("nba/stats")
+	public ResponseEntity<Void> updateNba(
+			@RequestBody Nba nba) {
+		
+		Nba createdNba = nbaService.save(nba);
+		
+		//Location
+		//Get current resource url
+		///nba/stats/{id}
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+				.path("/{id}").buildAndExpand(createdNba.getId()).toUri();
+		
+		return ResponseEntity.created(uri).build();
+		
+	}
+
 	
 }

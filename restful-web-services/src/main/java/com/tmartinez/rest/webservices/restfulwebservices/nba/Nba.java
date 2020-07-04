@@ -11,6 +11,10 @@ public class Nba {
 	private String position;
 	private String team;
 	private String pointsPerGame;
+	
+	protected Nba() {
+		
+	}
 
 	public Nba(long id, String firstName, String lastName, String position, String team, String pointsPerGame) {
 		super();

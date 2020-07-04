@@ -26,7 +26,7 @@ public class NbaHardcodedService {
 	
 	// Updating & Saving Nba
 	public Nba save(Nba nba) {
-		if(nba.getId()==-1) {
+		if(nba.getId()==-1 || nba.getId()==0) {
 			nba.setId(++idCounter);
 			nbas.add(nba);
 		} else {
