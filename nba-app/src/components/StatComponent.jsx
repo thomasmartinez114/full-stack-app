@@ -74,28 +74,28 @@ class StatComponent extends Component {
 
     onSubmit(values) {
 
+        let statObj = {
+            id: this.state.id,
+            firstName: values.firstName,
+            lastName: values.lastName,
+            position: values.position,
+            team: values.team,
+            pointsPerGame: values.pointsPerGame
+        }
+
+
         if (this.state.id === -1) {
-            NbaDataService.createNba({
-                id: this.state.id,
-                firstName: values.firstName,
-                lastName: values.lastName,
-                position: values.position,
-                team: values.team,
-                pointsPerGame: values.pointsPerGame
-            }).then(() => this.props.history.push('/nba/stats')) // Redirect to the stats page when successfully updating stat
+            NbaDataService.createNba(statObj)
+                .then(() => this.props.history.push('/nba/stats')) // Redirect to the stats page when successfully updating stat
+
         } else {
-            NbaDataService.updateNba(this.state.id, {
-                id: this.state.id,
-                firstName: values.firstName,
-                lastName: values.lastName,
-                position: values.position,
-                team: values.team,
-                pointsPerGame: values.pointsPerGame
-            }).then(() => this.props.history.push('/nba/stats')) // Redirect to the stats page when successfully updating stat
+            NbaDataService.updateNba(this.state.id, statObj)
+                .then(() => this.props.history.push('/nba/stats')) // Redirect to the stats page when successfully updating stat
         }
 
         console.log(values);
     }
+
     render() {
         let { firstName, lastName, position, team, pointsPerGame } = this.state
 
