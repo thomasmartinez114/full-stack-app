@@ -40,21 +40,36 @@ class LoginComponent extends Component {
     // }
 
     loginClicked() {
-        //tmartinez, dummy
-        if (this.state.username === 'tmartinez' && this.state.password === 'dummy') {
-            // Session storage on browser for when user logs in
-            AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password);
-            this.props.history.push(`/welcome/${this.state.username}`);
-            // console.log('Login Successful');
-            // this.setState({ showSuccessMessage: true });
-            // this.setState({ hasLoginFailed: false });
-        }
-        else {
-            // console.log('Login Failed');
-            this.setState({ showSuccessMessage: false });
-            this.setState({ hasLoginFailed: true });
 
-        }
+        // if (this.state.username === 'tmartinez' && this.state.password === '123') {
+
+        //     Session storage on browser for when user logs in
+        //     AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password);
+        //     this.props.history.push(`/welcome/${this.state.username}`);
+
+        //     console.log('Login Successful');
+        //     this.setState({ showSuccessMessage: true });
+        //     this.setState({ hasLoginFailed: false });
+        // }
+        // else {
+        //     console.log('Login Failed');
+        //     this.setState({ showSuccessMessage: false });
+        //     this.setState({ hasLoginFailed: true });
+        // }
+
+        // if AuthenticationService request is successful
+        // .then
+        // if fails
+        // .catch
+        AuthenticationService
+            .executeBasicAuthenticationService(this.state.username, this.state.password)
+            .then(() => {
+                AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password);
+                this.props.history.push(`/welcome/${this.state.username}`);
+            }).catch(() => {
+                this.setState({ showSuccessMessage: false });
+                this.setState({ hasLoginFailed: true });
+            })
     }
 
     render() {

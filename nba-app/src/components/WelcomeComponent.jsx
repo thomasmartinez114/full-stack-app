@@ -19,7 +19,7 @@ class WelcomeComponent extends Component {
                 <h1>Welcome!</h1>
                 <div className="container">
                     Welcome <b>{this.props.match.params.name}</b> to the NBA API.<br></br>
-                    You can view NBA stats <Link to="/stats">here</Link>
+                    You can view NBA stats <Link to="/nba/stats">here</Link>
                 </div>
                 {/* <div className="container">
                     Click here to get a customized welcome message.
@@ -53,6 +53,20 @@ class WelcomeComponent extends Component {
     handleSuccessfulReponse(response) {
         console.log(response);
         this.setState({ welcomeMessage: response.data.message })
+    }
+
+    handleError(error) {
+        console.log(error.response)
+        let errorMessage = '';
+
+        if (error.message)
+            errorMessage += error.message
+
+        if (error.response && error.response.data) {
+            errorMessage += error.response.data.message
+        }
+
+        this.setState({ welcomeMessage: errorMessage })
     }
 }
 

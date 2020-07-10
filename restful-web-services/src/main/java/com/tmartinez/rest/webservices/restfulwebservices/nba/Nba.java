@@ -5,20 +5,26 @@ package com.tmartinez.rest.webservices.restfulwebservices.nba;
 public class Nba {
 
 	private long id;
+//	private String username;
 	private String firstName;
 	private String lastName;
 	private String position;
 	private String team;
-	private double pointPerGame;
+	private String pointsPerGame;
+	
+	protected Nba() {
+		
+	}
 
-	public Nba(long id, String firstName, String lastName, String position, String team, double pointsPerGame) {
+	public Nba(long id, String firstName, String lastName, String position, String team, String pointsPerGame) {
 		super();
 		this.id = id;
+//		this.username = username;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.position = position;
 		this.team = team;
-		this.pointPerGame = pointsPerGame;
+		this.pointsPerGame = pointsPerGame;
 	}
 
 	public long getId() {
@@ -28,6 +34,14 @@ public class Nba {
 	public void setId(long id) {
 		this.id = id;
 	}
+	
+//	public String getUsername() {
+//		return username;
+//	}
+//
+//	public void setUsername(String username) {
+//		this.username = username;
+//	}
 
 	public String getFirstName() {
 		return firstName;
@@ -61,13 +75,37 @@ public class Nba {
 		this.team = team;
 	}
 
-	public double getPointPerGame() {
-		return pointPerGame;
+	public String getPointsPerGame() {
+		return pointsPerGame;
 	}
 
-	public void setPointPerGame(float pointPerGame) {
-		this.pointPerGame = pointPerGame;
+	public void setPointsPerGame(String pointsPerGame) {
+		this.pointsPerGame = pointsPerGame;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Nba other = (Nba) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	
+	
 
 //	private long id;
 //	private String username;
