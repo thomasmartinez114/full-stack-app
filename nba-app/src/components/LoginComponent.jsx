@@ -11,8 +11,6 @@ class LoginComponent extends Component {
             hasLoginFailed: false,
             showSuccessMessage: false,
         }
-        // this.handleUsernameChange = this.handleUsernameChange.bind(this);
-        // this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.loginClicked = this.loginClicked.bind(this);
     }
@@ -27,17 +25,6 @@ class LoginComponent extends Component {
             }
         )
     }
-
-    // handleUsernameChange(event) {
-    //     console.log(event.target.value);
-    //     this.setState({ username: event.target.value }
-    //     )
-    // }
-
-    // handlePasswordChange(event) {
-    //     console.log(event.target.value);
-    //     this.setState({ password: event.target.value })
-    // }
 
     loginClicked() {
 
@@ -61,10 +48,20 @@ class LoginComponent extends Component {
         // .then
         // if fails
         // .catch
+        // AuthenticationService
+        //     .executeBasicAuthenticationService(this.state.username, this.state.password)
+        //     .then(() => {
+        //         AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password);
+        //         this.props.history.push(`/welcome/${this.state.username}`);
+        //     }).catch(() => {
+        //         this.setState({ showSuccessMessage: false });
+        //         this.setState({ hasLoginFailed: true });
+        //     })
+
         AuthenticationService
-            .executeBasicAuthenticationService(this.state.username, this.state.password)
-            .then(() => {
-                AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password);
+            .executeJwtAuthenticationService(this.state.username, this.state.password)
+            .then((response) => {
+                AuthenticationService.registerSuccessfulLoginForJwt(this.state.username, response.data.token); // the token comes from the response
                 this.props.history.push(`/welcome/${this.state.username}`);
             }).catch(() => {
                 this.setState({ showSuccessMessage: false });
