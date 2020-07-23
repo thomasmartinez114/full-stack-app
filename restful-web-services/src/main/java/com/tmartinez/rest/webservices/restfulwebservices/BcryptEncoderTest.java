@@ -8,7 +8,7 @@ public class BcryptEncoderTest {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
 		for(int i=1; i<=10; i++) {
-		String encodedString = encoder.encode("password123#");
+		String encodedString = encoder.encode("123");
 		System.out.println(encodedString);
 		}
 		// TODO Auto-generated method stub
