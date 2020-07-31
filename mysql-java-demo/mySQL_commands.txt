@@ -1,3 +1,19 @@
+#######################################
+	   Creating table
+#######################################
+
+CREATE TABLE `stats_players` (
+	`idPlayer` int(11) NOT NULL auto_increment,
+    `firstName` varchar(50) NULL,
+	`lastName` varchar(50) NULL,
+	`position` varchar(50) NULL,
+	`team` varchar(50) NULL,
+	`pointsPerGame` varchar(50) NULL,
+    Constraint pk_idPlayer Primary key (idPlayer)
+);
+
+
+
 mysql> show databases;
 +--------------------+
 | Database           |
@@ -77,3 +93,4 @@ mysql> select * from customer;
 |  1 | Thomas    | Martinez |
 +----+-----------+----------+
 1 row in set (0.00 sec)
+
