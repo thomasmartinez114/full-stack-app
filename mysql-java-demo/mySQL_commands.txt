@@ -12,6 +12,13 @@ CREATE TABLE `stats_players` (
     Constraint pk_idPlayer Primary key (idPlayer)
 );
 
+#######################################
+	   Add values to table
+#######################################
+
+INSERT into stats_players
+(firstName, lastName, position, team, pointsPerGame)
+VALUES('LeBron', 'James', 'SF', 'LAL', 23.6);
 
 
 mysql> show databases;
