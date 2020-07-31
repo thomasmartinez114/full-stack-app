@@ -20,6 +20,11 @@ INSERT into stats_players
 (firstName, lastName, position, team, pointsPerGame)
 VALUES('LeBron', 'James', 'SF', 'LAL', 23.6);
 
+#######################################
+	   Select all values from table
+#######################################
+
+SELECT * from stats_players;
 
 mysql> show databases;
 +--------------------+
