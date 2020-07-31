@@ -26,6 +26,12 @@ VALUES('LeBron', 'James', 'SF', 'LAL', 23.6);
 
 SELECT * from stats_players;
 
+#######################################
+	   Sort data
+#######################################
+
+select * from stats_players order by pointsPerGame desc ;
+
 mysql> show databases;
 +--------------------+
 | Database           |
