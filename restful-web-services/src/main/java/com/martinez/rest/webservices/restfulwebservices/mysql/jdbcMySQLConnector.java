@@ -15,7 +15,7 @@ public class jdbcMySQLConnector {
 			
 			Connection myConn= DriverManager.getConnection(jdbcUrl, user, pass);
 			
-			System.out.println("Connection successful!");
+			System.out.println("Connection to database is successful!");
 			myConn.close();
 		}
 		catch(Exception exc) {
