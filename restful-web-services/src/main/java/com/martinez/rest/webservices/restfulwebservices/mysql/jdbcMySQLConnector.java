@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class jdbcMySQLConnector {
 
@@ -15,21 +16,21 @@ public class jdbcMySQLConnector {
 		try {
 			System.out.println("Connecting to database: "+jdbcUrl);
 			
+			// Connection to database
 			Connection myConn= DriverManager.getConnection(jdbcUrl, user, pass);
 			
 			System.out.println("Connection to database is successful!");
 			
-			// Query to grab all data
-			PreparedStatement statement = myConn.prepareStatement("select * from stats;");
+			// Create a statement
+			Statement myStmt = myConn.createStatement();
 			
-			// Creating a variable to execute the query
-			ResultSet result = statement.executeQuery();
+			// Execute SQL Query
+			ResultSet result = myStmt.executeQuery("select * from stats");
 			
-			while(result.next())
-			{
-				System.out.println(result.getString(1) + " " + result.getString(2));
+			// Process the result set
+			while (result.next()) {
+				System.out.println(result.getString("firstName") + " " + result.getString("lastName") + " " + result.getString("position") + " " + result.getString("team") + " " + result.getString("pointsPerGame"));
 			}
-			
 			myConn.close();
 		}
 		catch(Exception exc) {
