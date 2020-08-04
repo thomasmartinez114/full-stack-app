@@ -24,6 +24,15 @@ public class jdbcMySQLConnector {
 			// Create a statement
 			Statement myStmt = myConn.createStatement();
 			
+
+			
+			// inserting data to MySQL
+			String sql = "insert into stats "
+					+ " (firstName, lastName, position, team, pointsPerGame)"
+					+ " values ('Walker', 'Kemba', 'PG', 'BOS', '12')";
+			
+			myStmt.executeUpdate(sql);
+			
 			// Execute SQL Query
 			ResultSet result = myStmt.executeQuery("select * from stats");
 			
