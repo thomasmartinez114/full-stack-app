@@ -21,6 +21,15 @@ insert into stats
 values('LeBron', 'James', 'SF', 'LAL', 23.6);
 
 #######################################
+	  Add multiple values to table
+#######################################
+
+insert into stats
+(firstName, lastName, position, team, pointsPerGame)
+values('LeBron', 'James', 'SF', 'LAL', 23.6),
+('Bryant', 'Kobe', 'SG', 'LAL', 24.8);
+
+#######################################
 	   Select all values from table
 #######################################
 

@@ -29,7 +29,7 @@ public class jdbcMySQLConnector {
 			// inserting data to MySQL
 			String sql = "insert into stats "
 					+ " (firstName, lastName, position, team, pointsPerGame)"
-					+ " values ('Walker', 'Kemba', 'PG', 'BOS', '12')";
+					+ " values ('Walker', 'Kemba', 'PG', 'BOS', '13.5')";
 			
 			myStmt.executeUpdate(sql);
 			
