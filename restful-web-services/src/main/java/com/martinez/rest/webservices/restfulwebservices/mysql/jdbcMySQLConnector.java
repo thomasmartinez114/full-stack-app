@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class jdbcMySQLConnector {
 
 	public static void main(String[] args) {
-		String jdbcUrl="jdbc:mysql://localhost:3306/stats_players";
+		String jdbcUrl="jdbc:mysql://localhost:3306/nba_stats";
 		String user="root";
 		String pass="databas3";
 

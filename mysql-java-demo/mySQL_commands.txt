@@ -2,13 +2,13 @@
 	   Creating table
 #######################################
 
-CREATE TABLE `stats_players` (
+CREATE TABLE `stats` (
 	`idPlayer` int(11) NOT NULL auto_increment,
     `firstName` varchar(50) NULL,
 	`lastName` varchar(50) NULL,
 	`position` varchar(50) NULL,
 	`team` varchar(50) NULL,
-	`pointsPerGame` varchar(50) NULL,
+	`pointsPerGame` float(11) NULL,
     Constraint pk_idPlayer Primary key (idPlayer)
 );
 
@@ -16,21 +16,21 @@ CREATE TABLE `stats_players` (
 	   Add values to table
 #######################################
 
-INSERT into stats_players
+insert into stats
 (firstName, lastName, position, team, pointsPerGame)
-VALUES('LeBron', 'James', 'SF', 'LAL', 23.6);
+values('LeBron', 'James', 'SF', 'LAL', 23.6);
 
 #######################################
 	   Select all values from table
 #######################################
 
-SELECT * from stats_players;
+SELECT * from stats;
 
 #######################################
 	   Sort data
 #######################################
 
-select * from stats_players order by pointsPerGame desc ;
+select * from stats order by pointsPerGame desc ;
 
 mysql> show databases;
 +--------------------+
