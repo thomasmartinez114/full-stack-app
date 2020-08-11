@@ -1,22 +1,22 @@
 package com.martinez.rest.webservices.restfulwebservices.mysql;
 
-import com.martinez.rest.webservices.restfulwebservices.mysql.utilities.Util;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-
 
 public class jdbcMySQLConnector {
 
 	public static void main(String[] args) {
+		String jdbcUrl="jdbc:mysql://localhost:3306/nba_stats";
+		String user="NBAadmin";
+		String pass="NBAadmin#";
+
 		try {
-			System.out.println("Connecting to database: "+ Util.jdbcUrl);
+			System.out.println("Connecting to database: "+jdbcUrl);
 			
 			// Connection to database
-			Connection myConn= DriverManager.getConnection(Util.jdbcUrl, Util.user, Util.pass);
+			Connection myConn= DriverManager.getConnection(jdbcUrl, user, pass);
 			
 			System.out.println("Connection to database is successful!");
 			
@@ -25,22 +25,20 @@ public class jdbcMySQLConnector {
 			
 
 			
-//			// inserting data to MySQL
+			// inserting data to MySQL
 //			String sql = "insert into stats "
 //					+ " (firstName, lastName, position, team, pointsPerGame)"
-//					+ " values ('Young', 'Trae', 'PG', 'ATL', '12.5')";
-//
-//			System.out.println("New value added");
-//
+//					+ " values ('Walker', 'Kemba', 'PG', 'BOS', '13.5')";
+//			
 //			myStmt.executeUpdate(sql);
-//
-//			// Execute SQL Query
-//			ResultSet result = myStmt.executeQuery("select * from stats");
-//
-//			// Process the result set
-//			while (result.next()) {
-//				System.out.println(result.getString("firstName") + " " + result.getString("lastName") + " " + result.getString("position") + " " + result.getString("team") + " " + result.getString("pointsPerGame"));
-//			}
+			
+			// Execute SQL Query
+			ResultSet result = myStmt.executeQuery("select * from stats");
+			
+			// Process the result set
+			while (result.next()) {
+				System.out.println(result.getString("firstName") + " " + result.getString("lastName") + " " + result.getString("position") + " " + result.getString("team") + " " + result.getString("pointsPerGame"));
+			}
 			myConn.close();
 		}
 		catch(Exception exc) {

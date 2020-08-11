@@ -12,6 +12,14 @@ CREATE TABLE `stats` (
     Constraint pk_idPlayer Primary key (idPlayer)
 );
 
+CREATE TABLE IF NOT EXISTS `files_cr_cc` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fileName` varchar(128) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
 #######################################
 	   Add values to table
 #######################################
@@ -35,7 +43,7 @@ values('LeBron', 'James', 'SF', 'LAL', 23.6),
 
 SELECT * from stats;
 
-#######################################
+###################
 	   Sort data
 #######################################
 
