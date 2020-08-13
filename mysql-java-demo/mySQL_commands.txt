@@ -28,6 +28,10 @@ insert into stats
 (firstName, lastName, position, team, pointsPerGame)
 values('LeBron', 'James', 'SF', 'LAL', 23.6);
 
+INSERT INTO `files_cr_cc` (`id`, `fileName`, `created`, `modified`) VALUES
+(1, 'Test File 1', '2020-08-10 12:04:03', '2020-08-09 06:59:18'),
+(2, 'Test File 2', '2020-08-09 12:04:03', '2020-08-08 06:59:18');
+
 #######################################
 	  Add multiple values to table
 #######################################
